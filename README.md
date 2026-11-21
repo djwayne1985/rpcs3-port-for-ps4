@@ -1,4 +1,4 @@
-# RPCS3 PORT FOR PS4 0.40 - source code
+# RPCS3 PORT FOR PS4 0.41 - source code
 
 **RPCS3 PORT FOR PS4** is a port of [RPCS3](https://rpcs3.net), the PlayStation 3 emulator, to
 PlayStation 4 consoles running the GoldHEN homebrew enabler.
@@ -11,7 +11,7 @@ The emulation core is the original RPCS3 code (upstream commit
 Toolchain. The port adds the console frontend, native adapters for memory, video, audio, controllers,
 network and USB, and an XMB-style launcher.
 
-This folder holds the source code of version 0.40, released under the GNU General Public
+This folder holds the source code of version 0.41, released under the GNU General Public
 License version 2 (see [`LICENSE`](LICENSE)).
 
 ## What is in this folder
@@ -64,8 +64,8 @@ What is new in 0.40:
 - Return from a game to the XMB without closing the application (L1 + R1 + Triangle for 1 second, or
   L1 + R1 + Options for 2 seconds).
 
-The user guide (in Portuguese) is [`rpcs3-ps4/ps4-port/TUTORIAL.txt`](rpcs3-ps4/ps4-port/TUTORIAL.txt),
-and the console test guide is [`rpcs3-ps4/ps4-port/TESTAR_NO_PS4.txt`](rpcs3-ps4/ps4-port/TESTAR_NO_PS4.txt).
+The English user guide is [`rpcs3-ps4/ps4-port/TUTORIAL.txt`](rpcs3-ps4/ps4-port/TUTORIAL.txt),
+and the console test guide is [`rpcs3-ps4/ps4-port/TEST_ON_PS4.txt`](rpcs3-ps4/ps4-port/TEST_ON_PS4.txt).
 Both are also inside the PKG.
 
 ## Requirements

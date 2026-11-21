@@ -1,1063 +1,1063 @@
 RPCS3 PORT FOR PS4 - by Roberix Studio & Mifi Studios
-TUTORIAL PASSO A PASSO
-Versão 0.40 - TITLE_ID RPCS30010 - APP_VER 00.40
-Emulador de PS3 baseado no RPCS3 (https://rpcs3.net), licença GPL-2.0.
-Funciona em PS4 Fat, Slim e Pro desbloqueados com GoldHEN.
-Idiomas da XMB: Português (Brasil), English, Español, العربية (seção 6.1).
+STEP BY STEP TUTORIAL
+Version 0.41 - TITLE_ID RPCS30010 - APP_VER 00.41
+PS3 emulator based on RPCS3 (https://rpcs3.net), GPL-2.0 license.
+Works on PS4 Fat, Slim and Pro unlocked with GoldHEN.
+XMB languages: Portuguese (Brazil), English, Español, العربية (section 6.1).
 
-==========================================================================
-0. O QUE VOCÊ PRECISA
-==========================================================================
-- PS4 (Fat, Slim ou Pro) desbloqueado com GoldHEN.
-- O arquivo do emulador: RPCS3_PS4_NATIVE_x.xx_....pkg
-- Um PC (para baixar o firmware do PS3 e preparar os jogos).
-- Um pendrive ou HD externo formatado em exFAT (recomendado) ou FAT32.
-  Atenção: FAT32 não aceita arquivos maiores que 4 GB, então para ISOs
-  grandes use exFAT. Um HD formatado pelo PS4 como "armazenamento
-  estendido" NÃO funciona (é criptografado pelo sistema).
-- Seus próprios jogos de PS3 (disco, ISO, pasta ou PKG). O emulador não
-  vem com jogos, firmware nem licenças.
+========================================================================================
+0. WHAT YOU NEED
+========================================================================================
+- PS4 (Fat, Slim or Pro) unlocked with GoldHEN.
+- The emulator file: RPCS3_PS4_NATIVE_x.xx_....pkg
+- A PC (to download the PS3 firmware and prepare the games).
+- A pendrive or external hard drive formatted in exFAT (recommended) or FAT32.
+  Attention: FAT32 does not accept files larger than 4 GB, so for ISOs
+  large ones use exFAT. An HD formatted by the PS4 as "storage
+  extended" DOES NOT work (it is encrypted by the system).
+- Your own PS3 games (disc, ISO, folder or PKG). The emulator does not
+  comes with games, firmware or licenses.
 
-IMPORTANTE: o emulador nunca atualiza o sistema do PS4. Nunca atualize o
-firmware do seu PS4 por conta própria se quiser manter o desbloqueio.
+IMPORTANT: the emulator never updates the PS4 system. Never update the
+firmware your PS4 yourself if you want to keep unlocking.
 
-==========================================================================
-1. INSTALAR O EMULADOR NO PS4
-==========================================================================
-1. Copie o arquivo .pkg para o pendrive (raiz) ou para /data/pkg do PS4
-   (pelo FTP do GoldHEN).
-2. No PS4, abra o GoldHEN: Configurações de depuração (Debug Settings)
-   > Package Installer, e escolha o .pkg.
-3. Depois de instalado, o ícone "RPCS3 PORT FOR PS4" aparece na tela
-   inicial do PS4. Abra-o.
-Para atualizar para uma versão nova, é só instalar o .pkg novo do mesmo
-jeito: suas configurações, saves e caches são mantidos.
+========================================================================================
+1. INSTALL THE EMULATOR ON PS4
+========================================================================================
+1. Copy the .pkg file to the pendrive (root) or to /data/pkg on the PS4
+   (by FTP from GoldHEN).
+2. On PS4, open GoldHEN: Debug Settings
+   > Package Installer, and choose .pkg.
+3. Once installed, the "RPCS3 PORT FOR PS4" icon appears on the screen
+   PS4 homepage. Open it.
+To update to a new version, just install the new .pkg of the same
+way: your settings, saves and caches are maintained.
 
-Pastas pelo FTP do GoldHEN
-- ANTES DE MANDAR ARQUIVOS PELO FTP: abra o RPCS3 no PS4 uma vez. Na
-  primeira abertura ele cria sozinho a pasta /data/rpcs3 e todas as
-  subpastas (games, pkgs, raps, import, patches, custom_configs, data,
-  data/redump, exdata, keys, dev_hdd0...) já liberadas para o FTP.
-- Não crie essas pastas na mão pelo FileZilla antes disso e não copie
-  uma pasta rpcs3 ou dev_hdd0 inteira de outro PS4 ou do PC: pastas
-  criadas pelo FTP ficam bloqueadas para o emulador (aparece "Sem
-  permissão de gravação em ...", o PKG não instala ou o jogo não abre).
-- Se isso já aconteceu: deixe o servidor FTP do GoldHEN LIGADO e abra o
-  RPCS3 de novo. Ele conserta as permissões sozinho ao abrir (pode levar
-  até cerca de 1 minuto uma vez; com muitas pastas aparece "RPCS3:
-  liberando N pastas e arquivos bloqueados pelo FTP, aguarde...").
-  Uma pasta de cache que não puder ser consertada é posta de lado e
-  recriada (o jogo compila de novo uma vez); jogos, PKGs, licenças,
-  patches e saves nunca são movidos.
-- Com o FTP desligado, o RPCS3 mostra um aviso na XMB com as pastas
-  bloqueadas. Dá para consertar também pelo FileZilla: botão direito em
-  /data/rpcs3 > Permissões de arquivo... > valor numérico 777 > marque
-  "Recursão em subdiretórios" > OK. Depois abra o RPCS3 de novo.
-- Se o X num jogo abrir a janela "A pasta dev_hdd0 do RPCS3 não aceita
-  gravação (criada pelo FTP): ligue o FTP do GoldHEN e reabra o RPCS3",
-  faça exatamente isso: o jogo não conseguiria criar os dados dele
-  (tela preta). Círculo volta para a XMB. "Iniciar mesmo assim" (X)
-  abre o jogo assim mesmo, por sua conta: ele pode ficar numa tela preta
-  ou não salvar. Deixe o FTP do GoldHEN ligado sempre que abrir o RPCS3.
+Folders by FTP from GoldHEN
+- BEFORE SENDING FILES VIA FTP: open RPCS3 on PS4 once. In
+  first opening it creates the /data/rpcs3 folder and all the
+  subfolders (games, pkgs, raps, import, patches, custom_configs, data,
+  data/redump, exdata, keys, dev_hdd0...) already released for FTP.
+- Do not create these folders by hand in FileZilla before then and do not copy
+  an entire rpcs3 or dev_hdd0 folder from another PS4 or PC: folders
+  created by FTP are blocked for the emulator ("No
+  write permission to ...", PKG does not install or the game does not open).
+- If this has already happened: leave the FTP server ON and open the
+  RPCS3 again. It fixes the permissions by itself when opening (it may take
+  up to about 1 minute once; with many folders "RPCS3:
+  releasing N folders and files locked by FTP, please wait...").
+  A cache folder that cannot be repaired is set aside and
+  recreated (the game compiles again once); games, PKGs, licenses,
+  patches and saves are never moved.
+- With FTP turned off, RPCS3 shows a warning on XMB with the folders
+  blocked. You can also fix it using FileZilla: right click on
+  /data/rpcs3 > File permissions... > numeric value 777 > check
+  "Recursion in subdirectories" > OK. Then open RPCS3 again.
+- If X in a game opens the window "RPCS3 dev_hdd0 folder does not accept
+  recording (created by FTP): turn on FTP from GoldHEN and reopen RPCS3",
+  do exactly that: the game would not be able to create his data
+  (black screen). Circle back to XMB. "Start anyway" (X)
+  open the game anyway, on your own: it may appear on a black screen
+  or not save. Leave the FTP of the GoldHEN on whenever you open the RPCS3.
 
-==========================================================================
-2. INSTALAR O FIRMWARE DO PS3 (obrigatório, uma vez só)
-==========================================================================
-O emulador precisa do firmware oficial do PS3, igual ao RPCS3 do PC.
+========================================================================================
+2. INSTALL THE PS3 FIRMWARE (required, only once)
+========================================================================================
+The emulator needs the official PS3 firmware, the same as RPCS3 on the PC.
 
-Opção A - pelo pendrive (mais fácil)
-1. No PC, baixe o arquivo oficial do sistema do PS3 (PS3UPDAT.PUP) no
-   site da PlayStation (página "Atualização do software do sistema
+Option A - via pendrive (easier)
+1. On your PC, download the official PS3 system file (PS3UPDAT.PUP) from
+   PlayStation website ("System Software Update" page
    PS3").
-2. No pendrive, crie as pastas PS3 > UPDATE e coloque o arquivo nelas:
+2. On the pendrive, create the PS3 > UPDATE folders and place the file in them:
        PS3/UPDATE/PS3UPDAT.PUP
-   (também funciona com o arquivo solto na raiz do pendrive).
-3. Ligue o pendrive no PS4 e abra o emulador.
-4. Na XMB, vá até a coluna "Configurações", escolha
-   "Instalar firmware do PS3" e aperte X. O arquivo é conferido (leva
-   alguns segundos) e aparece a pergunta "Deseja instalar o firmware
-   4.93?" (com a versão do arquivo e a instalada): X (Sim) instala,
-   Círculo (Não) cancela.
-5. Espere a janela "Instalando..." terminar (barra com a porcentagem;
-   precisa de cerca de 550 MB livres no PS4). Enquanto ela está aberta
-   a XMB espera; Círculo pergunta se quer cancelar (só até a troca dos
-   arquivos começar). No fim aparece "A instalação foi concluída."; X
-   fecha. Pronto, não precisa repetir. Na próxima vez que abrir o
-   emulador, ele confere o firmware novo e apaga a cópia do anterior.
+   (it also works with the file placed on the root of the pendrive).
+3. Connect the pendrive to the PS4 and open the emulator.
+4. In XMB, go to the "Settings" column, choose
+   "Install PS3 Firmware" and press X. The file is checked (it takes
+   seconds) and the question "Do you want to install the firmware" appears?
+   4.93?" (with the file version and the installed one): X (Yes) installs,
+   Circle (No) cancels.
+5. Wait for the "Installing..." window to finish (bar with percentage;
+   needs about 550 MB free on PS4). While it's open
+   XMB waits; Circle asks if you want to cancel (only until the exchange of
+   files start). At the end it says "Installation is complete."; X
+   closes. Okay, no need to repeat it. The next time you open the
+   emulator, it checks the new firmware and deletes the copy of the previous one.
 
-Opção B - pelo FTP
-- Copie o PS3UPDAT.PUP para /data/rpcs3/ (ou /data/rpcs3/import/) pelo
-  FTP do GoldHEN e use o mesmo item "Instalar firmware do PS3".
+Option B - by FTP
+- Copy PS3UPDAT.PUP to /data/rpcs3/ (or /data/rpcs3/import/) by
+  FTP from GoldHEN and use the same "Install PS3 Firmware" item.
 
-==========================================================================
-3. COLOCAR JOGOS
-==========================================================================
-Formatos aceitos:
-- ISO de PS3 (arquivo .iso)
-- Jogo em pasta (pasta com PS3_GAME/USRDIR/EBOOT.BIN dentro)
-- PKG de PS3 (jogos/DLCs da PSN; precisam da licença .rap)
+========================================================================================
+3. PUT GAMES
+========================================================================================
+Accepted formats:
+- ISO from PS3 (.iso file)
+- Game in folder (folder with PS3_GAME/USRDIR/EBOOT.BIN inside)
+- PKG from PS3 (/DLCs games from PSN; require .rap license)
 
-Como montar as pastas (cada jogo na SUA pasta):
-- Jogo de disco em pasta (cópia do disco):
+How to assemble the folders (each game in ITS folder):
+- Folder disc game (disc copy):
        games/Nome do Jogo/PS3_GAME/...
        games/Nome do Jogo/PS3_DISC.SFB
-  O arquivo PS3_DISC.SFB da raiz do disco é obrigatório: sem ele o
-  jogo aparece com "falta PS3_DISC.SFB" e não abre.
-- Jogo da PSN em pasta: dê à pasta o nome do TITLE_ID do jogo:
+  The PS3_DISC.SFB file from the disk root is mandatory: without it the
+  game appears with "missing PS3_DISC.SFB" and does not open.
+- PSN game in folder: name the folder after the game's TITLE_ID:
        games/NPUB30554/PARAM.SFO
        games/NPUB30554/USRDIR/EBOOT.BIN
-  e importe a licença dele (veja "Licenças .rap" abaixo).
-- Nunca copie o conteúdo de um jogo (PS3_GAME, PS3_DISC.SFB) direto
-  dentro de games/: crie uma subpasta para ele. Se acontecer, ele
-  aparece com "copiado direto na pasta: mova para uma subpasta".
-- ISO que não terminou de copiar aparece como "ISO incompleta: faltam X
-  GB (cópia interrompida?) · copie de novo". Copie a ISO de novo (quando
-  a cópia termina, a linha volta ao normal sozinha). X nela abre a
-  janela "ISO menor que o tamanho declarado": Círculo volta; "Iniciar
-  mesmo assim" (X) abre o jogo, e se ele ler a parte que falta, para com
-  o aviso de ISO incompleta. Serve para uma ISO que foi cortada de
-  propósito e funciona.
-- ISO de jogo da PSN convertido em ISO (sem o PS3_DISC.SFB de um disco)
-  aparece como "ISO sem PS3_DISC.SFB: não inicia": ela também não abre
-  no RPCS3 do PC. Use o PKG do jogo.
-- ISO feita de uma pasta de jogo por um programa comum de criar ISO
-  (ImgBurn e parecidos), sem o cabeçalho de disco do PS3: desde a 0.39
-  ela abre (é lida como imagem sem criptografia, que é o que ela é).
-  Até a 0.38 era recusada como ISO corrompida; o RPCS3 do PC também
-  recusa. Desde a 0.40 ela abre também quando a pasta PS3_GAME está
-  dentro de outra pasta da ISO, ou com os nomes em letras minúsculas.
-- ISO que tem só a pasta de um jogo da PSN (PARAM.SFO e USRDIR, sem
-  PS3_GAME) aparece com "Jogo da PSN dentro de uma ISO: instale o PKG
-  dele (precisa da licença .rap)". ISO de PS2 ou de PSP aparece com
-  "Jogo de PS2: não é suportado por este emulador" (ou "Jogo de PSP").
-- Jogo de PKG cuja instalação ficou pela metade aparece como "Instalação
-  incompleta: instale o PKG de novo".
+  and import its license (see ".rap Licenses" below).
+- Never copy the content of a game (PS3_GAME, PS3_DISC.SFB) directly
+  inside games/: create a subfolder for it. If it happens, it
+  appears with "copied directly to folder: move to a subfolder".
+- ISO that has not finished copying appears as "ISO incomplete: X is missing
+  GB (copy interrupted?) · copy again". Copy the ISO again (when
+  the copy ends, the line returns to normal by itself). X on it opens the
+  "ISO smaller than declared size" window: Circle back; "Start
+  anyway" (X) opens the game, and if he reads the missing part, he stops with
+  the ISO warning is incomplete. Fits a ISO that has been cut from
+  purpose and it works.
+- Game ISO from PSN converted to ISO (without the PS3_DISC.SFB of a disc)
+  appears as "ISO without PS3_DISC.SFB: does not start": it does not open either
+  on RPCS3 on PC. Use the in-game PKG.
+- ISO made from a game folder by a common program to create ISO
+  (ImgBurn and similar), without the PS3 disk header: since 0.39
+  it opens (it is read as an unencrypted image, which is what it is).
+  Even 0.38 was rejected as corrupted ISO; PC's RPCS3 also
+  refusal. Since 0.40 it also opens when the PS3_GAME folder is
+  inside another ISO folder, or with the names in lowercase letters.
+- ISO which only has the folder of a PSN game (PARAM.SFO and USRDIR, without
+  PS3_GAME) appears with "PSN game inside a ISO: install PKG
+  (needs .rap license)". ISO from PS2 or PSP appears with
+  "PS2 Game: Not supported by this emulator" (or "PSP Game").
+- PKG game whose installation is half finished appears as "Installation
+  incomplete: install PKG again."
 
-Opção A - no próprio PS4 (pelo FTP do GoldHEN)
-- ISOs e jogos em pasta:  /data/rpcs3/games/
-- PKGs de PS3:            /data/rpcs3/pkgs/
-  Também são lidas as pastas /data/rpcs3/PS3ISO, pkg, packages, iso e
-  gamez (maiúsculas ou minúsculas tanto faz).
+Option A - on the PS4 itself (by FTP from GoldHEN)
+- ISOs and games in folder: /data/rpcs3/games/
+- PS3 PKGs: /data/rpcs3/pkgs/
+  The /data/rpcs3/PS3ISO, pkg, packages, iso and
+  gamez (upper or lower case doesn't matter).
 
-Opção B - em pendrive ou HD externo (igual ao PS3)
-No disco (exFAT ou FAT32), crie estas pastas na raiz:
-   PS3ISO/    -> arquivos .iso
-   GAMES/     -> jogos em pasta (cada jogo com sua pasta PS3_GAME)
-   PKG/       -> pacotes .pkg de PS3 (PACKAGES/ e a raiz também valem)
-Ligue o disco no PS4: os jogos aparecem sozinhos na XMB em alguns
-segundos (e somem se você tirar o disco). Cada jogo mostra de onde vem
-(PS4, USB 1, USB 2...). Na coluna "Rede", abaixo de "Armazenamento dos
-jogos", aparece uma linha para cada disco conectado.
-Os saves, caches e configurações ficam sempre no PS4; nada é gravado no
-seu pendrive/HD.
+Option B - on a pendrive or external hard drive (same as PS3)
+On the disk (exFAT or FAT32), create these folders at the root:
+   PS3ISO/ -> .iso files
+   GAMES/ -> games in folder (each game with its PS3_GAME folder)
+   PKG/ -> PS3 .pkg packages (PACKAGES/ and the root are also valid)
+Plug in the disc on PS4: games appear alone in XMB on some
+seconds (and disappear if you remove the disc). Each game shows where it comes from
+(PS4, USB 1, USB 2...). In the "Network" column, below "Data Storage",
+games", a line appears for each connected disc.
+Saves, caches and settings are always on the PS4; nothing is recorded in
+your pendrive/HD.
 
-Instalar um PKG de PS3
-1. Na coluna "Jogo", escolha o arquivo .pkg e aperte X para instalar.
-   Abre uma janela igual à do PS3, com a barra, a porcentagem e o tempo
-   restante; Círculo cancela. Se der errado, a janela diz "Não foi
-   possível concluir a instalação." com o motivo; X fecha.
-2. Deixe livre no PS4 pelo menos o DOBRO do tamanho do PKG. O emulador
-   não consegue consultar o espaço livre antes; se o espaço acabar no
-   meio, a instalação para com "Sem espaço em /data (precisa de ~N GB
-   livres)".
-3. PKG dividido em partes (NOME_00.pkg, NOME_01.pkg...): deixe todas
-   as partes juntas na mesma pasta; só a _00 aparece na lista e ela
-   instala o pacote inteiro.
-4. Updates: instale em ordem (v1.01, depois v1.02...). Se faltar um
-   anterior, a mensagem diz qual versão o update espera.
-   Update que pede uma versão que você não tem (ex.: disco v1.00 e um
-   update v1.12 feito para a v1.11): a janela explica e pergunta "Deseja
-   instalar mesmo assim?". X (Sim) instala, Círculo (Não) cancela (nada
-   é instalado). Alguns updates já trazem tudo e funcionam assim; outros
-   não. Se o jogo travar ou não abrir depois, apague a pasta
-   /data/rpcs3/dev_hdd0/game/<TITLE_ID> do jogo pelo FTP: o disco volta
-   a abrir na versão dele. Um DLC que estava nessa pasta também é
-   apagado: instale o PKG dele de novo depois.
-   Se o seu disco já for da mesma versão ou mais novo que o update, ele
-   é recusado (não precisa).
-5. PKG de PS4 (os do GoldHEN) não é instalado pelo emulador.
-6. Enquanto o FileZilla ainda copia um PKG, a linha dele mostra
-   "Copiando..." e o X avisa "ainda copiando": espere a cópia terminar
-   (a lista atualiza sozinha) e aperte X de novo. Cada recusa diz o
-   motivo exato (arquivo incompleto, parte faltando, PKG de PS4...).
+Install a PS3 PKG
+1. In the "Game" column, choose the .pkg file and press X to install.
+   Opens a window similar to the PS3, with the bar, percentage and time
+   remainder; Circle cancels. If it goes wrong, the window says "It was not
+   unable to complete the installation." with the reason; X closes.
+2. Leave at least DOUBLE the size of the PKG free on the PS4. The emulator
+   cannot query free space beforehand; if space runs out
+   halfway through, the installation stops with "No space on /data (needs ~N GB
+   free)".
+3. PKG divided into parts (NOME_00.pkg, NAME_01.pkg...): leave them all
+   the parts together in the same folder; only _00 appears in the list and it
+   installs the entire package.
+4. Updates: install in order (v1.01, then v1.02...). If one is missing
+   previous, the message says which version the update expects.
+   Update that asks for a version you don't have (e.g. disk v1.00 and a
+   update v1.12 made for v1.11): the window explains and asks "Do you want
+   install anyway?" X (Yes) installs, Circle (No) cancels (nothing
+   is installed). Some updates already bring everything and work like this; others
+   no. If the game crashes or doesn't open later, delete the folder
+   /data/rpcs3/dev_hdd0/game/<TITLE_ID> of the game by FTP: the disc comes back
+   opening in his version. A DLC that was in that folder is also
+   deleted: install its PKG again later.
+   If your disk is already the same version or newer than the update, it
+   is refused (no need).
+5. PKG on PS4 (GoldHEN) is not installed by the emulator.
+6. While FileZilla still copies a PKG, its line shows
+   "Copying..." and X warns "still copying": wait for the copy to finish
+   (the list updates itself) and press X again. Each refusal says the
+   exact reason (incomplete file, missing part, PKG from PS4...).
 
-Licenças .rap (DLC e jogos da PSN)
-- O arquivo de licença tem 16 bytes e se chama <CONTENT_ID>.rap, por
-  exemplo UP0001-NPUB30554_00-0000000000000001.rap.
-- Coloque os .rap em /data/rpcs3/raps/ (pelo FTP) ou no pendrive
-  (pasta raps/ ou exdata/), soltos ou numa subpasta, e use o item
-  "Importar licenças .rap (DLC / jogos PSN)", no topo da coluna "Jogo".
-  Triângulo na coluna "Jogo" > "Atualizar biblioteca de jogos" também
-  atualiza a lista e importa.
-- Maiúsculas/minúsculas no nome não importam: o emulador grava a cópia
-  com o nome que o RPCS3 procura. Arquivos .rif não servem (o RPCS3 só
-  usa .rap).
+.rap licenses (DLC and PSN games)
+- The license file is 16 bytes and called <CONTENT_ID>.rap, for
+  example UP0001-NPUB30554_00-0000000000000001.rap.
+- Put the .rap in /data/rpcs3/raps/ (via FTP) or on the pendrive
+  (raps/ or exdata/ folder), loose or in a subfolder, and use the item
+  "Import .rap licenses (DLC / PSN games)", at the top of the "Game" column.
+  Triangle in the "Game" column > "Update game library" too
+  updates the list and imports.
+- Capital letters /mincase letters in the name do not matter: the emulator writes the copy
+  with the name that RPCS3 is looking for. .rif files are useless (RPCS3 only
+  uses .rap).
 
-Discos físicos de PS3
-- Com o disco no leitor do PS4, o próprio emulador instala o jogo, sem
-  PC: veja a seção 3.1 logo abaixo.
-- Também dá para copiar o disco fora do PS4:
-  a) No PC, com um leitor de Blu-ray compatível e o PS3 Disc Dumper
-     (baixe só da página oficial do projeto). Ele gera uma pasta
-     "TITLE_ID - Nome" com PS3_GAME e PS3_DISC.SFB.
-  b) Num PS3 desbloqueado (multiMAN, webMAN MOD ou IRISMAN): "copiar
-     disco" gera uma pasta; "backup em ISO" gera uma ISO.
-- Copie a pasta para USB:/GAMES/ ou a ISO para USB:/PS3ISO/ (disco
-  exFAT; FAT32 não aceita arquivos de 4 GB ou mais, e ISO dividida em
-  partes .iso.0/.iso.1 não é lida: junte as partes no PC antes).
-- ISO criptografada (formato redump): NÃO precisa mais de chave
-  manual. Aperte X: a janela "Buscando a chave desta ISO..." busca a
-  chave sozinha (Círculo cancela) e o jogo abre. A chave vem de um
-  arquivo .ird ao lado da ISO (mesmo nome, qualquer .ird da pasta ou a
-  subpasta ird/), dos .ird já baixados ou da base de chaves pela
-  internet (a mesma do PS3 Disc Dumper; precisa de internet no PS4 e da
-  data e hora certas). Ela fica guardada em /data/rpcs3/data/redump/
-  (<TITLE_ID>.dkey e <nome da ISO>.dkey): da segunda vez abre direto.
-  Se o jogo não estiver na base, a XMB diz "Esta ISO está criptografada
-  e a chave não está na base (<ID>): use uma ISO decriptada". ISO e
-  pastas já decriptadas (PS3 Disc Dumper, PS3 desbloqueado) não precisam
-  de chave.
-- Sem internet: ponha o .dkey, o .ird ou uma lista de chaves da SUA ISO
-  em USB:/keys ou em /data/rpcs3/keys e aperte X de novo (seção 3.2).
-- Último recurso, se a busca não achar: a chave .dkey com o MESMO nome
-  ao lado da ISO (Jogo.iso + Jogo.dkey), ou em /data/rpcs3/data/redump/
-  (Jogo.dkey ou BLUS30443.dkey). Pelo pendrive: crie a pasta redump na
-  raiz do pendrive, coloque os .dkey nela e use o item "Importar chaves
-  .dkey (USB:/redump)" da coluna "Rede" (abaixo de "Armazenamento dos
-  jogos").
+PS3 physical discs
+- With the disc in the PS4 player, the emulator itself installs the game, without
+  PC: see section 3.1 below.
+- You can also copy the disc outside the PS4:
+  a) On PC, with a compatible Blu-ray player and PS3 Disc Dumper
+     (only download from the project's official page). It generates a folder
+     "TITLE_ID - Name" with PS3_GAME and PS3_DISC.SFB.
+  b) On a jailbroken PS3 (multiMAN, webMAN MOD or IRISMAN): "copy
+     disk" generates a folder; "backup in ISO" generates a ISO.
+- Copy the folder to USB:/GAMES/ or ISO to USB:/PS3ISO/ (disk
+  exFAT; FAT32 does not accept files of 4 GB or more, and ISO divided into
+  parts .iso.0/.iso.1 is not read: join the parts on the PC first).
+- Encrypted ISO (redump format): NO longer needs a key
+  manual. Press X: the "Searching for this ISO..." window searches for the
+  key alone (Circle cancels) and the game opens. The key comes from a
+  .ird file next to ISO (same name, any .ird of the folder or the
+  subfolder ird/), from the .ird already downloaded or from the key base by
+  internet (the same as the PS3 Disc Dumper; you need internet on the PS4 and the
+  correct date and time). It is stored in /data/rpcs3/data/redump/
+  (<TITLE_ID>.dkey and <ISO name>.dkey): the second time it opens directly.
+  If the game is not in the base, the XMB says "This ISO is encrypted
+  and the key is not in the base (<ID>): use a decrypted ISO". ISO and
+  already decrypted folders (PS3 Disc Dumper, Jailbroken PS3) do not need
+  key.
+- Without internet: enter the .dkey, the .ird or a list of keys from YOUR ISO
+  USB:/keys or /data/rpcs3/keys and press X again (section 3.2).
+- Last resort, if the search doesn't find it: the .dkey with the SAME name
+  next to ISO (Jogo.iso + Jogo.dkey), or in /data/rpcs3/data/redump/
+  (Game.dkey or BLUS30443.dkey). Using the pendrive: create the redump folder in
+  root of the pendrive, place the .dkey in it and use the "Import keys" item
+  .dkey (USB:/redump)" from the "Network" column (below "Storage of
+  games").
 
-==========================================================================
-3.1 DISCO DE PS3 NO LEITOR DO PS4
-==========================================================================
-Coloque o disco do jogo de PS3 no leitor do PS4: o emulador copia o
-disco uma vez para o PS4 e depois o jogo abre pela lista, como uma ISO.
-O disco nunca é gravado nem alterado: o emulador só lê.
+========================================================================================
+3.1 PS3 DISK ON PS4 READER
+========================================================================================
+Place the PS3 game disc in the PS4 player: the emulator copies the
+disc once for the PS4 and then the game opens through the list, like a ISO.
+The disk is never written to or changed: the emulator only reads it.
 
-O que precisa
-- O servidor FTP do GoldHEN ligado. É por ele que o emulador lê o
-  leitor (o mesmo FTP que você usa no FileZilla). Ele fica nas opções
-  do GoldHEN: Configurações > GoldHEN > Server Settings > FTP Server
-  (o nome pode mudar um pouco conforme a versão do GoldHEN).
-- O PS4 conectado a uma rede (Wi-Fi ou cabo): sem rede nenhuma o FTP do
-  GoldHEN não responde e o emulador não vê o leitor. Para ler o leitor
-  não precisa de internet (seção 3.2).
-- Internet no PS4 (e a data e hora do PS4 certas) na primeira vez de
-  cada disco: o emulador busca sozinho a chave do disco (o mesmo arquivo
-  .ird que o PS3 Disc Dumper do PC usa) e confere se ela abre o disco
-  antes de usar. Sem internet, a chave pode vir de um arquivo seu
-  (seção 3.2).
-- Espaço livre no PS4: o tamanho do disco mais 1 GB (um disco de
-  10,6 GB precisa de uns 11,7 GB livres). A tela mostra quanto há.
+What do you need
+- GoldHEN server FTP connected. This is why the emulator reads the
+  reader (the same FTP you use in FileZilla). It is in the options
+  from GoldHEN: Settings > GoldHEN > Server Settings > FTP Server
+  (the name may change slightly depending on the version of GoldHEN).
+- The PS4 connected to a network (Wi-Fi or cable): without any network the FTP of the
+  GoldHEN does not respond and the emulator does not see the reader. To read the reader
+  does not need internet (section 3.2).
+- Internet on PS4 (and correct PS4 date and time) the first time
+  each disk: the emulator searches for the disk key alone (the same file
+  .ird that the PC's PS3 Disc Dumper uses) and check if it opens the disc
+  before using. Without internet, the key can come from a file of yours
+  (section 3.2).
+- Free space on PS4: the size of the disc plus 1 GB (one disc
+  10.6 GB needs about 11.7 GB free). The screen shows how much there is.
 
-Como instalar
-1. Coloque o disco no leitor e abra o emulador. Em alguns segundos
-   aparece na coluna "Jogo" a linha "Disco de PS3: Nome (BLES01876)".
-2. Aperte X. A janela pergunta "Deseja instalar este disco no PS4?" e
-   mostra o tamanho, o tempo (uma estimativa), a chave do disco e o
-   espaço livre. X instala, Círculo volta.
-3. Abre a janela da cópia, igual à do PS3: "Copiando o disco...", com a
-   barra, a porcentagem, a velocidade e o tempo restante. X volta para a
-   XMB e a cópia continua (a linha de baixo da XMB mostra o progresso;
-   X na linha do disco abre a janela de novo). Nenhum jogo abre até
-   terminar.
-4. Círculo (na janela ou na linha do disco) pergunta "Deseja cancelar a
-   instalação do disco?": X (Sim) cancela, Círculo (Não) continua. O que
-   já foi copiado fica guardado: escolha o disco de novo e a instalação
-   continua de onde parou. Se o aplicativo fechar ou o disco sair do
-   leitor no meio, é igual: depois ela continua.
-5. No fim aparece "A instalação foi concluída." (X fecha) e a XMB diz
-   "Disco instalado: Nome · já está na lista de jogos".
-   O jogo fica em /data/rpcs3/games e abre com X, como uma ISO, quando
-   o disco dele está no leitor (veja abaixo). Na linha "Disco de PS3",
-   X também abre o jogo instalado e Quadrado instala de novo.
+How to install
+1. Place the disc in the player and open the emulator. In a few seconds
+   The line "PS3 Disc: Name (BLES01876)" appears in the "Game" column.
+2. Press X. The window asks "Do you want to install this disc on your PS4?" and
+   shows the size, time (an estimate), disk key, and
+   free space. X installs, Circle returns.
+3. Open the copy window, same as the PS3: "Copying the disc...", with the
+   bar, percentage, speed and remaining time. X returns to
+   XMB and copying continues (the bottom line of XMB shows the progress;
+   X in the disk line opens the window again). No game opens until
+   finish.
+4. Circle (in the window or on the disk line) asks "Do you want to cancel the
+   disk installation?": X (Yes) cancels, Circle (No) continues. What
+   has already been copied and is saved: choose the disk again and install
+   continues where it left off. If the application closes or the disc exits
+   reader in the middle, it's the same: then she continues.
+5. At the end it says "Installation is complete." (X closes) and XMB says
+   "Disc installed: Name · is already in the games list."
+   The game is in /data/rpcs3/games and opens with X, like a ISO, when
+   his disc is in the reader (see below). In the "PS3 Disc" line,
+   X also opens the installed game and Square installs it again.
 
-Para jogar, o disco precisa estar no leitor
-- Um jogo instalado do disco só abre com o disco dele no leitor do
-  PS4, como no PS3. Sem o disco, o ícone do jogo fica mais apagado, com
-  um cadeado no meio, e a linha embaixo do nome diz "precisa do disco no
-  leitor".
-- Coloque o disco e espere alguns segundos: o cadeado sai sozinho (se
-  antes havia outro disco no leitor, pode levar até 1 minuto; X confere
-  o leitor na hora).
-- X com o cadeado abre a janela "Verificando o disco..." e, sem o
-  disco, "Coloque o disco deste jogo no leitor do PS4.", que diz o que
-  está errado (leitor vazio, disco de outro jogo, FTP desligado).
-  Coloque o disco com essa janela aberta: ela muda para "Disco
-  reconhecido." e X (Jogar) abre o jogo. Círculo volta para a XMB.
-- O FTP do GoldHEN precisa estar ligado também para jogar: é por ele que
-  o emulador vê o disco no leitor.
-- Serve qualquer disco do mesmo jogo.
-- Durante o jogo o emulador olha o leitor a cada 3 segundos. Se o disco
-  sair do leitor (ou for trocado pelo disco de outro jogo) por uns 10
-  segundos, o jogo PAUSA com o aviso "RPCS3: o disco do jogo saiu do
-  leitor e o jogo foi pausado. Coloque o disco de novo para continuar."
-  Ponha o disco de volta: o jogo continua sozinho ("RPCS3: disco de
-  volta: jogo retomado."). Para sair sem o disco: L1 + R1 + Triângulo
-  (volta para a XMB) ou botão PS > Fechar aplicativo.
-- Se o FTP do GoldHEN cair durante o jogo, o jogo não pausa por isso:
-  sem o FTP o emulador só não consegue olhar o leitor.
-- Só pede o disco a ISO que a linha "Disco de PS3" instalou: o mesmo
-  arquivo, no mesmo lugar, com o mesmo tamanho. Na lista ela aparece como
-  "Instalado do disco · precisa do disco no leitor". Qualquer outra ISO,
-  mesmo do mesmo jogo, aparece como "ISO de PS3" e abre sem disco, assim
-  como pastas e PKG.
+To play, the disc needs to be in the player
+- A game installed from a disc only opens with its disc in the player.
+  PS4, as on PS3. Without the disc, the game icon becomes fainter, with
+  a padlock in the middle, and the line under the name says "needs disk in
+  reader."
+- Insert the disk and wait a few seconds: the padlock comes out on its own (if
+  before there was another disc in the player, it could take up to 1 minute; X checks
+  the reader at once).
+- X with the padlock opens the "Checking disk..." window and, without the
+  disc, "Put this game disc into the PS4 player.", which says what
+  is wrong (empty player, another game disc, FTP turned off).
+  Load the disc with this window open: it changes to "Disc
+  recognized." and X (Play) opens the game. Circle back to XMB.
+- GoldHEN's FTP also needs to be turned on to play: that's why
+  the emulator sees the disc in the reader.
+- Fits any disc of the same game.
+- During the game the emulator looks at the player every 3 seconds. If the disk
+  leaves the player (or is exchanged for another game disc) for about 10
+  seconds, the game PAUSES with the warning "RPCS3: the game disc has left the
+  player and the game was paused. Put the disc back in to continue."
+  Put the disc back: the game continues alone ("RPCS3: disc
+  back: game resumed."). To exit without the disk: L1 + R1 + Triangle
+  (returns to XMB) or PS button > Close application.
+- If GoldHEN's FTP falls during the game, the game does not pause so:
+  Without FTP the emulator just can't look at the reader.
+- Just ask for the disc from ISO that the "PS3 Disc" line installed: the same
+  file, in the same place, with the same size. In the list it appears as
+  "Installed from disc · needs disc in reader." Any other ISO,
+  even from the same game, it appears as "ISO from PS3" and opens without a disc, like this
+  like folders and PKG.
 
-Se a chave não vier (sem internet, ou o disco não está na base)
-- A tela avisa e explica. Dá para instalar assim mesmo ("Instalar sem a
-  chave", X); o jogo abre quando a chave chegar.
-- Sem internet a janela diz "Sem internet: a chave deste disco ainda
-  não está neste PS4." e o Triângulo ("Procurar de novo") procura de
-  novo nos seus arquivos: veja a seção 3.2.
-- Com o disco no leitor e a XMB aberta, o emulador tenta de novo
-  sozinho (1 minuto depois, depois a cada vez mais tempo, até 10
-  minutos), também para um disco já instalado sem a chave. Não precisa
-  do PC nem copiar arquivo nenhum.
-- Só se o disco não estiver na base de chaves: ponha o arquivo .ird do
-  disco em USB:/ird, ou a chave .dkey em USB:/keys ou USB:/redump
-  (seção 3.2). "Importar chaves .dkey" copia os .dkey de USB:/redump
-  para o PS4 (último recurso).
-- A chave fica guardada em /data/rpcs3/data/redump/<TITLE_ID>.dkey.
-  Com a chave, a cópia já é gravada decriptada e não precisa de mais
-  nada.
+If the key does not come (no internet, or the disk is not in the base)
+- The screen warns and explains. You can install it anyway ("Install without
+  key", X); the game opens when the key arrives.
+- Without internet the window says "No internet: the key for this disc is still
+  It's not on this PS4." and the Triangle ("Search again") searches for
+  new in your files: see section 3.2.
+- With the disc in the player and XMB open, the emulator tries again
+  alone (1 minute later, then increasingly longer, up to 10
+  minutes), also for a disc already installed without the key. No need
+  from the PC or copy any files.
+- Only if the disk is not in the key base: put the .ird file of the
+  disk at USB:/ird, or the .dkey at USB:/keys or USB:/redump
+  (section 3.2). "Import .dkey keys" copies the .dkeys from USB:/redump
+  for PS4 (last resort).
+- The key is stored in /data/rpcs3/data/redump/<TITLE_ID>.dkey.
+  With the key, the copy is already recorded decrypted and does not need further
+  nothing.
 
-Se aparecer "Disco de PS3: ligue o FTP do GoldHEN"
-- O servidor FTP do GoldHEN está desligado (sem ele o emulador não vê o
-  leitor). Ligue e espere alguns segundos: a linha atualiza sozinha
-  (Triângulo > "Atualizar biblioteca de jogos" também lê o leitor de
-  novo).
+If "PS3 Disc: Turn on GoldHEN FTP" appears
+- The FTP server of GoldHEN is turned off (without it the emulator does not see the
+  reader). Turn it on and wait a few seconds: the line updates itself
+  (Triangle > "Update Game Library" also reads the game reader
+  new).
 
-Se aparecer "Disco de PS3: sem rede, o FTP do GoldHEN não atende"
-- O PS4 não está em rede nenhuma, e sem rede o FTP do GoldHEN não
-  funciona. Conecte o PS4 a uma rede Wi-Fi ou cabo (não precisa de
-  internet) e espere alguns segundos.
+If "PS3 Disc: No Network, GoldHEN GoldHEN does not answer"
+- The PS4 is not on any network, and without a network the FTP of the GoldHEN cannot
+  works. Connect your PS4 to a Wi-Fi or cable network (no need
+  internet) and wait a few seconds.
 
-Bom saber
-- Disco riscado ou sujo: se o leitor não conseguir ler um trecho, a
-  instalação para e diz o setor ("O leitor não conseguiu ler um trecho
-  do disco..."). Limpe o disco e instale de novo: continua de onde
-  parou.
-- Discos de camada dupla (até 50 GB) também instalam; precisam do
-  tamanho do disco + 1 GB livres.
-- "Testar leitor de disco (só leitura)", na coluna "Rede", testa o
-  leitor e o FTP do GoldHEN e grava o resultado no startup.log.
+Good to know
+- Scratched or dirty disc: if the reader cannot read an excerpt, the
+  installation stops and says the sector ("The reader was unable to read a portion
+  of the disk..."). Clean the disk and install again: continue from where
+  stopped.
+- Dual layer disks (up to 50 GB) also install; need the
+  disk size + 1 GB free.
+- "Test disk reader (read only)", in the "Network" column, tests the
+  reader and FTP from GoldHEN and writes the result to startup.log.
 
-==========================================================================
-3.2 DISCOS E ISOs SEM INTERNET
-==========================================================================
-O leitor sem internet
-- O emulador lê o leitor pelo FTP do GoldHEN, e o FTP do GoldHEN só
-  funciona com o PS4 conectado a uma rede. Para usar discos, deixe o PS4
-  em qualquer rede (Wi-Fi ou cabo). Para ler o leitor não precisa de
-  internet: um roteador sem internet já serve (isso ainda está sendo
-  confirmado nos testes; se não funcionar, mande os logs).
-- Sem rede nenhuma, a linha do disco diz "Disco de PS3: sem rede, o FTP
-  do GoldHEN não atende", e um jogo instalado do disco fica com o
-  cadeado e a janela "Sem rede: o FTP do GoldHEN não está respondendo,
-  então o app não vê o leitor.". Conecte o PS4 a uma rede e espere
-  alguns segundos.
+========================================================================================
+3.2 DISCS AND ISOs WITHOUT INTERNET
+========================================================================================
+The reader without internet
+- The emulator reads the reader by the FTP of the GoldHEN, and the FTP of the GoldHEN only
+  works with the PS4 connected to a network. To use discs, leave the PS4
+  on any network (Wi-Fi or cable). To read, the reader does not need
+  internet: a router without internet will do (this is still being
+  confirmed in tests; If it doesn't work, send the logs).
+- Without any network, the disc line says "PS3 disc: without network, FTP
+  of GoldHEN does not respond", and a game installed from the disc is left with the
+  padlock and the window "No network: GoldHEN's FTP is not responding,
+  so the app doesn't see the reader." Connect PS4 to a network and wait
+  a few seconds.
 
-A chave do disco
-- A chave de um disco de PS3 NÃO pode ser lida pelo leitor do PS4. Ela
-  vem da internet (como antes) ou de um arquivo feito a partir do SEU
-  disco. O emulador não traz chaves e não baixa listas de chaves.
-- A chave só precisa chegar UMA vez. Depois ela fica guardada no PS4
-  (/data/rpcs3/data/redump) e o disco funciona sem internet para
-  sempre. Um disco instalado com a chave já fica gravado decriptado e
-  não precisa mais de chave nenhuma.
-- Desde a 0.40 cada prensagem do disco (cada fabricação) ganha a sua
-  própria cópia da chave (<TITLE_ID>-<código>.dkey): um segundo disco do
-  mesmo jogo não apaga mais a chave do primeiro.
+The disk key
+- A PS3 disc key CANNOT be read by the PS4 reader. She
+  comes from the internet (as before) or from a file made from YOUR
+  disk. The emulator does not carry keys and does not download key lists.
+- The key only needs to arrive ONCE. Then it is saved on the PS4
+  (/data/rpcs3/data/redump) and the disk works without internet to
+  always. A disk installed with the key is already recorded decrypted and
+  You no longer need any keys.
+- From 0.40 each pressing of the record (each manufacturing) earns its own
+  own copy of the key (<TITLE_ID>-<code>.dkey): a second disk of the
+  The same game no longer deletes the key from the first one.
 
-Disco ou ISO novo, sem internet: onde pôr a chave
-- O emulador procura sozinho a chave nos seus arquivos:
-    no pendrive: as pastas keys, redump ou ird (na raiz do pendrive);
-    no PS4: /data/rpcs3/keys (mande pelo FTP; a pasta já existe).
-  Serve: o arquivo .dkey ou .key do disco, o .ird do disco, ou uma lista
-  de chaves em texto (.txt), uma por linha, com ou sem o código do jogo
-  (ex.: BLES01876). Pode ser a chave ou o data1: o emulador testa os
-  dois e só usa o que abre o disco. Um arquivo errado não estraga nada.
-  O emulador nunca apaga nem muda esses arquivos.
-- Como conseguir o arquivo do SEU disco: num PS3 desbloqueado seu, ou o
-  .ird do seu disco que o PS3 Disc Dumper faz no PC. Uma cópia
-  decriptada do disco (feita num PS3 desbloqueado ou no PC) nem precisa
-  de chave.
+New disk or ISO, without internet: where to put the key
+- The emulator searches for the key in your files on its own:
+    on the pendrive: the keys, redump or ird folders (in the root of the pendrive);
+    on PS4: /data/rpcs3/keys (send FTP; the folder already exists).
+  Serves: the disk's .dkey or .key file, the disk's .ird, or a list
+  of text keys (.txt), one per line, with or without the game code
+  (e.g. BLES01876). It can be the key or data1: the emulator tests the
+  two and only use the one that opens the disk. A wrong file doesn't ruin anything.
+  The emulator never deletes or changes these files.
+- How to get the file from YOUR disc: on your unlocked PS3, or the
+  .ird from your disc that PS3 Disc Dumper does on PC. A copy
+  decrypted from the disc (done on a jailbroken PS3 or PC) doesn't even need to be
+  key.
 
-O que as janelas dizem
-- Na janela "Deseja instalar este disco no PS4?", sem internet e sem a
-  chave, aparece "Sem internet: a chave deste disco ainda não está neste
-  PS4." e três saídas:
-    X (Instalar sem a chave): a cópia é feita agora e o jogo abre
-      quando a chave chegar (pela internet ou por um arquivo seu);
-    Triângulo (Procurar de novo): procura de novo nos seus arquivos
-      (ponha o pendrive antes);
-    Círculo (Voltar).
-- "3 arquivo(s) de chave encontrado(s) neste PS4 e no pendrive; nenhum
-  abre este disco.": achou arquivos de chave, mas nenhum é deste disco.
-- "Chave do disco encontrada em <lugar> e guardada neste PS4": achou;
-  pode instalar.
-- "Data e hora do PS4 erradas: a busca da chave pela internet falha.
-  Acerte em Configurações > Data e Hora.": acerte a data e a hora do
-  PS4 e aperte Triângulo.
-- Ligar um pendrive com a XMB aberta também faz o emulador procurar de
-  novo sozinho (quando a última busca não achou a chave).
-- ISO criptografada sem internet e sem a chave: X diz "Sem internet e
-  sem a chave desta ISO: ponha o .dkey, o .ird ou uma lista em USB:/keys
-  ou /data/rpcs3/keys". Ponha o arquivo e aperte X de novo.
+What the windows say
+- In the "Do you want to install this disc on PS4?" window, without internet and without
+  key, it says "No internet: the key for this disk is not yet on this
+  PS4." and three outputs:
+    X (Install without key): the copy is now made and the game opens
+      when the key arrives (via the internet or in your file);
+    Triangle (Search again): searches your files again
+      (put the pendrive in first);
+    Circle (Back).
+- "3 key file(s) found on this PS4 and USB stick; none
+  open this disk.": found key files, but none are from this disk.
+- "Disc key found in <place> and saved on this PS4": found;
+  can install.
+- "PS4 date and time wrong: searching for the key online fails.
+  Go to Settings > Date and Time.": set the date and time of the
+  PS4 and press Triangle.
+- Connecting a pendrive with XMB open also makes the emulator search for
+  new alone (when the last search did not find the key).
+- ISO encrypted without internet and without the key:
+  without the key of this ISO: put the .dkey, the .ird or a list in USB:/keys
+  or /data/rpcs3/keys". Put the file in and press X again.
 
-Jogo instalado do disco, PS4 sem rede
-- O jogo continua pedindo o disco no leitor, como no PS3, e para isso o
-  emulador precisa ver o leitor (FTP do GoldHEN, com rede). Sem rede, a
-  janela do cadeado diz "Conecte o PS4 a qualquer rede (Wi-Fi ou cabo);
-  a internet não é necessária.".
+Game installed from disc, PS4 without network
+- The game continues to ask for the disc in the reader, like on the PS3, and to do so the
+  emulator needs to see the reader (FTP from GoldHEN, with network). Without a network, the
+  lock window says "Connect PS4 to any network (Wi-Fi or cable);
+  the internet is not necessary."
 
-==========================================================================
-4. JOGAR
-==========================================================================
-1. Na coluna "Jogo", escolha o jogo e aperte X.
-2. A PRIMEIRA vez que um jogo abre, o emulador "compila" o jogo para o
-   PS4 ("Compiling PPU Modules" / "Building SPU Cache"). Normalmente
-   leva de 6 a 45 minutos; em jogos grandes, até cerca de uma hora.
-   É só uma vez; nas próximas abre bem mais rápido. Deixe terminar:
-   não feche durante essa etapa, mesmo que pareça parado. Desde a 0.40
-   o RPCS3.log também diz, a cada minuto, "compiling the game (PPU 12
-   of 88 modules, ~20 min left: do not close)" (o jogo está compilando:
-   não feche).
-   VERSÃO NOVA: o primeiro boot de cada jogo na 0.40 monta o cache SPU
-   de novo ("Building SPU Cache"). Pode levar alguns minutos, como na
-   0.38 (Demon's Souls: uns 3 a 4 minutos). Não feche: não é travamento.
-   Com o "Modo frio" ligado (seção 6), a abertura compila uma coisa de
-   cada vez, como na 0.38 (o primeiro boot do Fallout New Vegas levou
-   cerca de uma hora e meia assim).
-   JOGOS QUE INSTALAM DADOS: alguns jogos copiam dados para o HD na
-   primeira vez, com a barra de progresso do próprio jogo (ex.: Fallout
-   New Vegas, cerca de 7 minutos). O jogo não travou: espere a barra
-   terminar. Desde a 0.39 o emulador não avisa mais "o jogo parece
-   travado" enquanto essa janela do jogo está na tela.
-   (Se o espaço do PS4 ficar curto ou os caches passarem de 8 GB, o
-   emulador apaga sozinho o cache dos jogos que você não abre há mais
-   tempo; esses jogos compilam de novo na próxima vez.)
-   GUARDE O CACHE: não apague o cache de um jogo (L1 na XMB) só porque
-   a primeira sessão foi lenta. A segunda já usa o que foi compilado;
-   apagar faz tudo de novo. Ao atualizar o emulador, também não apague
+========================================================================================
+4. PLAY
+========================================================================================
+1. In the "Game" column, choose the game and press X.
+2. THE FIRST time a game opens, the emulator "compiles" the game for
+   PS4 ("Compiling PPU Modules" / "Building SPU Cache"). Normally
+   takes 6 to 45 minutes; in large games, up to about an hour.
+   It's just once; next time it opens much faster. Let it finish:
+   do not close during this step, even if it appears stopped. Since 0.40
+   RPCS3.log also says, every minute, "compiling the game (PPU 12
+   of 88 modules, ~20 min left: do not close)" (the game is compiling:
+   do not close).
+   NEW VERSION: the first boot of each game in 0.40 mounts the SPU cache
+   again ("Building SPU Cache"). It may take a few minutes, as in
+   0.38 (Demon's Souls: about 3 to 4 minutes). Do not close: it is not a lock.
+   With "Cool Mode" turned on (section 6), the opening compiles something of
+   each time, like in 0.38 (the first boot of Fallout New Vegas took
+   about an hour and a half like this).
+   GAMES THAT INSTALL DATA: some games copy data to the HD on the
+   first time, with the game's own progress bar (e.g. Fallout
+   New Vegas, about 7 minutes). The game did not crash: wait for the bar
+   finish. Since 0.39 the emulator no longer warns "the game looks
+   stuck" while this game window is on the screen.
+   (If the PS4 runs low on space or caches exceed 8GB, the
+   The emulator automatically erases the cache of games you haven't opened in a long time
+   time; these games compile again next time.)
+   KEEP THE CACHE: do not delete the cache of a game (L1 on XMB) just because
+   the first session was slow. The second already uses what was compiled;
+   erase does it all over again. When updating the emulator, also do not delete
    /data/rpcs3/cache.
-   Desde a 0.38 a segunda abertura é bem mais rápida: o "Building SPU
-   Cache" carrega o código SPU já compilado em vez de compilar de novo.
-   Depois de instalar uma versão nova do emulador, a primeira abertura de
-   cada jogo compila esse código uma vez mais.
-   CENAS NOVAS NA PRIMEIRA VEZ: quando uma cena aparece pela primeira
-   vez, o emulador ainda está preparando os gráficos dela (shaders).
-   Desde a 0.37 ele desenha a cena com um "intérprete" de shaders
-   enquanto prepara (igual ao RPCS3 do PC): quase nada some ou pisca,
-   mas a cena pode ficar um pouco mais lenta ou dar uma travadinha. Da
-   segunda vez em diante a mesma cena fica normal, desde que o cache
-   seja guardado.
-3. Muitos jogos precisam dos ajustes e dos patches que o RPCS3 de PC
-   usa (sem eles, por exemplo, o TTT2 fica com texturas pretas):
-   importe o patch.yml do PC (seção 7). Os ajustes por jogo do RPCS3 de
-   PC (config_database.dat) já vêm dentro do pacote (seção 6).
-   Não escolha o interpretador de PPU ou de SPU nas configurações de um
-   jogo: no PS4 ele é 10 a 50 vezes mais lento (1 a 2 FPS); o emulador
-   avisa quando um jogo abre com ele.
-4. Voltar do jogo para a XMB: aperte L1 + R1 + Triângulo juntos e segure
-   por 1 segundo
-   (ou L1 + R1 + Options por 2 segundos).
-5. Sair do emulador: botão PS > Fechar aplicativo (o jogo pausa sozinho
-   antes), ou "Sair do RPCS3 PORT FOR PS4" na XMB.
-6. Trocar de jogo: volte para a XMB e escolha outro jogo. Se o próximo
-   jogo não couber na memória que sobrou do anterior (a memória do
-   emulador só volta toda quando o aplicativo fecha), ou se o jogo
-   anterior acabou com a GPU parada ou sem memória, a XMB mostra a
-   janela "Para jogar, feche o RPCS3 e abra de novo." Feche pelo
-   botão PS > Fechar aplicativo e abra o emulador de novo: o jogo que
-   você escolheu abre sozinho depois de uma barra de 5 segundos (X abre
-   na hora, Círculo cancela e fica na XMB).
+   Since 0.38 the second opening is much faster: "Building SPU
+   Cache" loads the already compiled SPU code instead of compiling it again.
+   After installing a new version of the emulator, the first time opening
+   each game compiles this code once more.
+   NEW SCENES THE FIRST TIME: when a scene appears for the first time
+   time, the emulator is still preparing its graphics (shaders).
+   Since 0.37 it draws the scene with a shader "interpreter"
+   while preparing (same as RPCS3 on PC): almost nothing disappears or blinks,
+   but the scene may slow down a little or slow down. From
+   second time onwards the same scene is normal, as long as the cache
+   be saved.
+3. Many games need the tweaks and patches that PC RPCS3
+   uses (without them, for example, TTT2 has black textures):
+   import patch.yml from PC (section 7). RPCS3's per-game settings
+   PC (config_database.dat) are already included in the package (section 6).
+   Do not choose the PPU or SPU interpreter in the settings of a
+   game: on PS4 it is 10 to 50 times slower (1 to 2 FPS); the emulator
+   Notifies you when a game opens with it.
+4. Return from the game to XMB: press L1 + R1 + Triangle together and hold
+   for 1 second
+   (or L1 + R1 + Options for 2 seconds).
+5. Exit the emulator: PS button > Close application (the game pauses by itself
+   before), or "Exit RPCS3 PORT FOR PS4" in XMB.
+6. Switch games: go back to XMB and choose another game. If the next
+   game does not fit in the memory left over from the previous one (the memory of the
+   emulator only comes back when the application closes), or if the game
+previous one ended with the GPU stopped or running out of memory, XMB shows the
+   window "To play, close RPCS3 and reopen." Close fur
+   PS button > Close application and open the emulator again: the game that
+   you chose opens by itself after a 5 second bar (X opens
+   Right away, Círculo cancels it and stays at XMB).
 
-Atalhos sobre um jogo na XMB:
-   X        iniciar / instalar
-   Quadrado configurações deste jogo
-   R1       patches deste jogo
-   R2       cheats deste jogo (seção 7.1)
-   L1       limpar o cache deste jogo (força recompilar)
-   Triângulo opções: pastas (seção 4.1) e "Atualizar biblioteca de
-            jogos" (atualiza a lista, como o Triângulo fazia antes)
+Shortcuts about a game on XMB:
+   X start/install
+   Square settings of this game
+   R1 patches for this game
+   R2 cheats for this game (section 7.1)
+   L1 clear this game's cache (force recompile)
+   Triangle options: folders (section 4.1) and "Update library
+            games" (updates the list, as Triângulo did before)
 
-==========================================================================
-4.1 PASTAS NA XMB (COMO NO PS3)
-==========================================================================
-Na coluna "Jogo" você pode juntar jogos em pastas, como na XMB do PS3.
-Apagar uma pasta NUNCA apaga jogo nenhum: os jogos só voltam para a
-lista.
+========================================================================================
+4.1 FOLDERS IN XMB (AS ON PS3)
+========================================================================================
+In the "Game" column you can group games into folders, like XMB on PS3.
+Deleting a folder NEVER deletes any game: the games only return to the
+list.
 
-Triângulo na coluna "Jogo" = Opções
-- Desde a 0.40, Triângulo na coluna "Jogo" abre a lista de opções do
-  item escolhido, como no PS3. A primeira opção, "Atualizar biblioteca
-  de jogos", faz o que o Triângulo fazia antes (atualiza a lista,
-  importa as licenças .rap e lê o leitor de disco de novo): Triângulo e
-  depois X. Nas outras colunas o Triângulo continua atualizando.
-  Círculo ou Triângulo fecha as opções.
+Triangle in the "Game" column = Options
+- Since 0.40, Triangle in the "Game" column opens the list of game options
+  chosen item, like on PS3. The first option, "Update library
+  of games", does what Triângulo did before (updates the list,
+  imports the .rap licenses and reads the disc reader again): Triangle and
+  then X. In the other columns the Triangle continues to update.
+  Circle or Triangle closes the options.
 
-Criar uma pasta
-1. Na coluna "Jogo", Triângulo > "Criar pasta".
-2. Digite o nome no teclado do PS4 (até 32 letras) e confirme. A pasta
-   aparece na lista como "Pasta vazia". Se o teclado não abrir, a pasta
-   é criada como "Nova pasta": renomeie depois.
+Create a folder
+1. In the "Game" column, Triangle > "Create folder".
+2. Type the name on the PS4 keyboard (up to 32 letters) and confirm. The folder
+   appears in the list as "Empty folder". If the keyboard does not open, the folder
+   is created as "New folder": rename it later.
 
-Colocar jogos numa pasta
-- Um jogo: Triângulo sobre o jogo > "Mover para uma pasta" > escolha a
-  pasta (ou "Nova pasta..." para criar uma e já mover). O cursor passa
-  para o jogo seguinte: dá para arrumar vários jogos seguidos.
-- Vários de uma vez: Triângulo sobre a pasta > "Adicionar jogos". Todos
-  os jogos aparecem com uma caixa de marcar: X marca ou desmarca, L1/R1
-  passam a página, Triângulo conclui e Círculo cancela (nada muda). Um
-  jogo que já está em outra pasta mostra o nome dela; marcar muda o jogo
-  para esta pasta.
+Put games in a folder
+- A game: Triangle over the game > "Move to a folder" > choose the
+  folder (or "New folder..." to create one and move it). The cursor passes
+  for the next game: you can arrange several games in a row.
+- Several at once: Triangle over the folder > "Add games". All
+  games appear with a check box: X checks or unchecks, L1/R1
+  they pass the page, Triângulo concludes and Círculo cancels (nothing changes). One
+  game that is already in another folder shows its name; scoring changes the game
+  to this folder.
 
-Abrir e fechar
-- X na pasta abre: os jogos dela aparecem no lugar da lista. Círculo
-  fecha e volta para a pasta.
-- Dentro da pasta, cada jogo funciona como antes (X, Quadrado, R1, R2,
-  L1). Ao sair de um jogo aberto de dentro de uma pasta, a XMB volta
-  para dentro dela, no mesmo jogo.
+Open and close
+- X in the folder opens: its games appear instead of the list. Circle
+  closes and returns to the folder.
+- Inside the folder, each game works as before (X, Square, R1, R2,
+  L1). When leaving an open game from within a folder, XMB returns
+  into it, in the same game.
 
-Renomear, mudar a ordem, tirar, apagar
-- Triângulo sobre a pasta > "Renomear pasta": o teclado abre com o nome
-  atual.
-- Triângulo sobre a pasta > "Mudar posição": Cima/Baixo move a pasta
-  entre as outras pastas, X confirma, Círculo desfaz. Dentro de uma
-  pasta, a mesma opção muda a ordem dos jogos dela.
-- Triângulo sobre um jogo dentro da pasta > "Tirar da pasta": o jogo
-  volta para a lista normal.
-- Triângulo sobre a pasta > "Apagar pasta": a pergunta "Apagar a pasta
-  '<nome>'?" lembra "Nenhum jogo é apagado: os jogos da pasta voltam
-  para a lista de jogos.". X (Sim) apaga só a pasta.
+Rename, change order, remove, delete
+- Triangle over the folder > "Rename folder": the keyboard opens with the name
+  current.
+- Triangle over the folder > "Change position": Cima/Baixo moves the folder
+  among the other folders, X confirms, Circle undoes. Within a
+  folder, the same option changes the order of the games in it.
+- Triangle over a game inside the folder > "Remove from folder": the game
+  returns to the normal list.
+- Triangle over the folder > "Delete folder": the question "Delete the folder
+  '<name>'?" remembers "No games are deleted: games in the folder come back
+  to the game list." X (Yes) only deletes the folder.
 
-Bom saber
-- Só um nível: não existe pasta dentro de pasta.
-- As pastas vêm primeiro, na ordem que você escolheu; depois vêm os
-  jogos que não estão em pasta nenhuma, na ordem de sempre.
-- Um jogo de um pendrive desligado continua na pasta, e a linha da
-  pasta diz "1 fora da biblioteca agora". Ligue o pendrive (em qualquer
-  porta USB) e ele volta. Só "Esquecer jogos fora da biblioteca" tira
-  esses jogos da pasta: use se você apagou os jogos.
-- As pastas ficam em /data/rpcs3/xmb-folders.txt, com a cópia anterior
-  em /data/rpcs3/xmb-folders.txt.bak. Se o arquivo estragar, a XMB diz
-  "O arquivo das pastas estava danificado; foi usada a cópia anterior".
-  O emulador só grava esses arquivos das pastas: nenhum arquivo de jogo
-  é mexido.
-- O ícone da pasta é o do firmware do PS3 que você instalou (o mesmo da
-  XMB do PS3). Sem o firmware aparece uma pasta desenhada pelo próprio
-  emulador. O pacote não traz nenhuma imagem da Sony.
-- Letras que a fonte da XMB não tem aparecem como "?" no nome.
+Good to know
+- Only one level: there is no folder within a folder.
+- The folders come first, in the order you chose; then come the
+  games that are not in any folder, in the usual order.
+- A game from a disconnected pendrive remains in the folder, and the
+  folder says "1 out of library now". Connect the pendrive (anywhere)
+  USB port) and it comes back. Just "Forget games outside the library" removes
+  these games from the folder: use if you deleted the games.
+- The folders are in /data/rpcs3/xmb-folders.txt, with the previous copy
+  in /data/rpcs3/xmb-folders.txt.bak. If the file goes bad, XMB says
+  "The folder file was damaged; the previous copy was used."
+  The emulator only writes these files from the folders: no game files
+  is stirred.
+- The folder icon is that of the PS3 firmware you installed (the same as the
+  XMB from PS3). Without the firmware, a folder designed by the user appears
+  emulator. The package does not contain any images from Sony.
+- Letters that the XMB font doesn't have appear as "?" in the name.
 
-==========================================================================
-5. CONTROLES E ATÉ 4 JOGADORES
-==========================================================================
-- Cada controle precisa de um usuário logado no PS4. Para o jogador 2,
-  3 ou 4: aperte o botão PS no controle novo e entre com um usuário ou
-  "Convidado".
-- Cor da luz: Jogador 1 azul, 2 vermelho, 3 verde, 4 rosa.
-- A coluna "Usuários" mostra quem está em cada vaga.
-- O sensor de movimento do DualShock 4 é enviado aos jogos que usam
-  SIXAXIS (ainda em teste no PS4: se um jogo não responder ao
-  movimento, envie os logs).
+========================================================================================
+5. CONTROLS AND UP TO 4 PLAYERS
+========================================================================================
+- Each controller needs a user logged in to the PS4. For player 2,
+  3 or 4: press the PS button on the new controller and enter a user or
+  "Guest".
+- Light color: Player 1 blue, 2 red, 3 green, 4 pink.
+- The "Users" column shows who is in each vacancy.
+- DualShock 4's motion sensor is pushed to games that use
+  SIXAXIS (still in testing on PS4: if a game doesn't respond to
+  movement, send the logs).
 
-==========================================================================
-6. CONFIGURAÇÕES
-==========================================================================
-- A "Configuração automática" vem ligada: ao abrir cada jogo o emulador
-  escolhe sozinho o melhor perfil para o PS4 e as correções conhecidas
-  do jogo. Na maioria dos casos você não precisa mexer em nada.
-  Quando o jogo tem ajustes próprios (do emulador ou da base do RPCS3
-  de PC), aparece o aviso "RPCS3: configuração automática ativa para
-  <ID> (N ajuste(s) específico(s) para este jogo)". Um jogo sem ajustes
-  próprios abre sem esse aviso: não é erro.
-- "Configurações do RPCS3" tem as mesmas abas do RPCS3 de PC (CPU, GPU,
-  Áudio, E/S, Sistema, Rede, Avançado, Emulador, Depuração) e a aba PS4
-  (controles, online, UPnP, Modo frio, cenas, áudio, idioma dos jogos,
-  modo seguro).
-  Cada aba abre uma página como a do PS3: cada opção mostra o valor que
-  vai rodar e um selo que diz quem decide: Automático, Jogo, PC, PS4
-  (cadeado: limite do console), Interruptor (segue a aba PS4), Após
-  falha, Seu (sua escolha) ou Deste jogo.
-- Na página: X muda a opção (lista de valores, teclado do sistema para
-  números e textos, ou uma subpágina), Esquerda/Direita passam os
-  valores (R1: passo maior), Quadrado volta a opção ao automático,
-  Triângulo abre as opções da linha (padrão do RPCS3, valor global,
-  fixar o valor, ajuda completa do PC, chave no YAML), L2/R2 trocam de
-  aba e Círculo volta.
-- Uma opção que você muda para um valor diferente do automático vira
-  "seu ajuste" (selo Seu): ela roda como você escolheu e a configuração
-  automática não mexe mais nela, até você apertar Quadrado. Só um
-  limite real do PS4 ganha da sua escolha, e a página mostra isso com o
-  cadeado (selo PS4) e o motivo.
-- Opções avançadas mostram um aviso na primeira mudança (X muda mesmo
-  assim, Círculo cancela). As que não funcionam no PS4 aparecem com o
-  cadeado e o motivo ("Indisponível no PS4").
-- Limites do PS4 que a página mostra desde a 0.40:
-    "Escala de resolução": acima de 200 % o jogo roda com 200 % (a
-      memória de vídeo do PS4 não aguenta mais; o F.E.A.R. fechava a
-      650 %). No menu do botão PS dentro do jogo ela vai até 150 %;
-    "Saída de áudio" Null: roda como Cubeb ("o PS4 tem uma saída de
-      som; Null não silenciava, só tirava o buffer e o som picotava (use
+========================================================================================
+6. SETTINGS
+========================================================================================
+- "Automatic configuration" is turned on: when opening each game the emulator
+  choose the best profile for PS4 and known fixes on your own
+  of the game. In most cases you don't need to touch anything.
+  When the game has its own settings (from the emulator or from the RPCS3 base
+  PC), the warning "RPCS3: automatic configuration active for
+  <ID> (N specific setting(s) for this game)". A game without adjustments
+  themselves opens without this warning: it is not an error.
+- "RPCS3 Settings" has the same tabs as PC RPCS3 (CPU, GPU,
+  Audio, E/S, System, Network, Advanced, Emulator, Debug) and the PS4 tab
+  (controls, online, UPnP, Cool mode, scenes, audio, game language,
+  secure mode).
+  Each tab opens a page like the one on the PS3: each option shows the value that
+  will run and a seal that says who decides: Automatic, Game, PC, PS4
+  (padlock: console limit), Switch (follows the PS4 tab), After
+  failure, Yours (your choice) or This game.
+- On the page: X changes the option (list of values, system keyboard to
+  numbers and texts, or a subpage), Left/Direita pass the
+  values (R1: largest step), Square returns the option to automatic,
+  Triangle opens the line options (RPCS3 default, global value,
+  set value, full PC help, key in YAML), L2/R2 switch
+  flap and Circle back.
+- An option that you change to a value other than automatic turns
+  "your adjustment" (your seal): it runs as you chose and the configuration
+  automatic doesn't change it anymore, until you press Square. Just one
+  PS4's actual limit wins over your choice, and the page shows this with the
+  padlock (PS4 seal) and the reason.
+- Advanced options show a warning on the first change (X changes even
+  thus, Circle cancels). Those that don't work on PS4 appear with the
+  padlock and the reason ("Unavailable on PS4").
+- PS4 limits that the page shows since 0.40:
+    "Resolution scale": above 200% the game runs at 200% (the
+      PS4's video memory can't handle it anymore; the F.E.A.R. closed the
+      650%). In the PS button menu within the game it goes up to 150%;
+    "Audio output" Null: runs like Cubeb ("the PS4 has an audio output"
+      sound; Null didn't silence it, it just removed the buffer and the sound shredded (use
       o Volume)");
-    "Sincronização vertical" no Vulkan: "o PS4 apresenta sempre com
-      sincronismo (FIFO)";
-    "Formato de saída de áudio" Mono: apagado ("a saída do PS4 é só
-      estéreo: Mono ficaria sem som");
-    "Cache em disco": fica entre 1024 MB e 10 % do espaço livre do PS4
-      (de 4096 a 10240 MB).
-  Valores que funcionam, mas com um aviso: "Ativar buffer" desligado
-  ("sem buffer o som pode pular depois de cargas e pausas") e o
-  Renderizador OpenGL ("Zink: mais lento e sem orçamento de VRAM"). A
-  ajuda de "Pular quadros" lembra: "alguns jogos recusam; pode travar
-  filmes".
-- Uma opção com cadeado que tem um valor salvo no seu arquivo mostra
-  "valor salvo no arquivo sem efeito no PS4 · Quadrado remove":
-  Quadrado tira esse valor do arquivo no próximo Salvar.
-- O startup.log diz, a cada boot, quais valores dos seus arquivos rodam
-  diferente e por quê, numa linha como "settings: BLUS30645: 2 valor(es)
-  rodando diferente dos seus arquivos: Frame limit Off->Auto
-  (automático), Resolution Scale 775->200 (limite do PS4)". A mesma
-  linha vai para o RPCS3.log.
-- Sair com alterações não salvas pergunta "Salvar as alterações?": X
-  Salvar, Círculo Descartar, Triângulo continua editando.
-- Para mudar algo só em um jogo: Quadrado sobre o jogo. O arquivo do
-  jogo guarda só o que você mudou; o resto segue as configurações
-  globais e o automático. A linha do modo do jogo troca entre
-  "Automático + seus ajustes" e "Manual: tudo como salvo". "Voltar para
-  automático" apaga seus ajustes daquele jogo e "Apagar:
-  config_<ID>.yml" apaga o arquivo do jogo (X de novo confirma).
-- Um arquivo de jogo antigo (salvo pela 0.38 ou antes, ou copiado do
-  RPCS3 de PC): com a "Configuração automática", a maior parte dos
-  valores dele NÃO vale, porque o automático escolhe por cima (era
-  assim também nas versões anteriores, só que ninguém avisava). Desde a
-  0.40 o jogo avisa ao abrir, uma vez por versão: "N ajuste(s) do
-  arquivo do jogo sem efeito · Quadrado no jogo > Converter". Para usar
-  os seus valores: na linha do modo do jogo, X mostra "Converter: N
-  valor(es) viram ajustes seus" e X de novo converte.
-- O mesmo para as configurações globais: quando o seu arquivo global
-  tem valores que o automático troca, o topo de "Configurações do RPCS3"
-  mostra "Usar meus valores salvos (N)". X mostra quais são, X de novo
-  fixa todos como ajustes seus e Salvar grava.
-- "Novidades neste jogo" (Quadrado sobre o jogo, logo abaixo de "Modo
-  seguro deste jogo"): "nenhuma (padrão)" ou "Áudio da 0.39" (as regras
-  de áudio da 0.39 só para esse jogo: Rango, God of War Ascension e
-  inFamous tinham menos som picotado com elas). Vale no próximo início
-  do jogo. Grava /data/rpcs3/custom_configs/<TITLE_ID>.features.
-- No menu do botão PS dentro do jogo (Options + Touchpad), Quadrado
-  (Salvar) grava só o que você mudou nesse menu, como ajuste seu daquele
-  jogo.
-- Configurações por jogo iguais às do PC: desde a 0.39 o arquivo de
-  ajustes por jogo do RPCS3 de PC (config_database.dat, da pasta
-  GuiConfigs) já vem dentro do PKG, e a configuração automática usa
-  esses ajustes sozinha: não é preciso importar nada. Bom saber: em
-  alguns jogos (ex.: Lollipop Chainsaw, Wipeout HD Fury, Sonic & SEGA
-  All-Stars Racing, Dante's Inferno) ele liga "Write Color Buffers", que
-  corrige gráficos mas custa um pouco de FPS. Em alguns outros jogos ele
-  liga o decodificador de vídeo do próprio PS3 (libvdec), que nunca foi
-  testado no PS4: se um vídeo travar num desses jogos, avise (a troca
-  aparece no RPCS3.log, em "Libraries Control").
-  Para usar uma cópia mais nova (a do RPCS3 do seu PC): copie o
-  config_database.dat para o pendrive (raiz) e use "Configurações" >
-  "Importar config_database.dat do PC", ou copie pelo FTP para
-  /data/rpcs3/import/ ou direto para /data/rpcs3/config_database.dat.
-  A cópia de /data vale no lugar da do pacote (a não ser que as duas
-  tenham data e a do pacote seja mais nova). A linha "config database:"
-  do startup.log diz qual está valendo ("bundled /app0/..." = a do
-  pacote).
-- "Modo frio (menos calor)": em Configurações do RPCS3 > PS4, ao lado
-  do Modo online. Ligado, o emulador gasta menos CPU esperando à toa (menos
-  calor e ruído); alguns jogos perdem um pouco de FPS, mais em áreas
-  novas (ele compila uma coisa de cada vez, também na primeira abertura
-  de um jogo, como na 0.38). Vale a partir do próximo jogo. Ele nunca
-  mexe na ventoinha, no clock nem nas configurações do PS4.
-- "Evitar piscadas nas cenas" (logo abaixo do Modo frio, vem desligado):
-  na primeira vez que uma cena aparece, segura a última imagem completa
-  enquanto os shaders compilam. Você vê uma pausa curta (no máximo 3/4
-  de segundo por vez) em vez de uma piscada. Vale a partir do próximo
-  jogo. Não deixa o jogo mais rápido. Desde a 0.37 as cenas novas quase
-  não piscam mais (seção 4), então normalmente não precisa.
-- "Áudio contínuo" (logo abaixo, vem "Desligado (padrão)" desde a 0.40,
-  como na 0.38): "Automático" faz o emulador deixar o som um pouco mais
-  lento (nunca abaixo de 70%) quando o jogo não consegue produzir o som
-  a tempo, em vez de deixar ele picotar, e voltar ao normal quando o
-  jogo acompanha. Em jogos que acompanham ele nunca entra. A voz dos
-  vídeos pode atrasar um pouco em relação à boca dos personagens
-  enquanto ele age. "Automático" cria /data/rpcs3/audio-continuity.flag.
-  Vale a partir do próximo jogo.
-- "Modo seguro" (aba PS4, vem "Desligado (padrão)"): Ligado desliga para
-  TODOS os jogos as novidades que valem para todos os jogos (é o nível
-  1 do modo seguro, seção 10). Serve para testar: se um jogo funciona
-  com ele ligado e não funciona desligado, mande os logs das duas
-  vezes. Vale a partir do próximo jogo; a XMB diz "Modo seguro ligado"
-  ao abrir. Grava /data/rpcs3/safe-mode.flag.
-- "Modo seguro deste jogo" (Quadrado sobre o jogo): Desligado, Nível 1,
-  2 ou 3, só para esse jogo (seção 10).
-- O volume e os outros ajustes de áudio do menu do botão PS (dentro do
-  jogo) valem na hora, também quando o jogo está no modo seguro. Desde a
-  0.40 esse menu não tem mais a escolha do "Renderer" de áudio: o PS4
-  tem uma saída de som só, e "Null" não tirava o som (só tirava o buffer
-  e o som picotava). Um "Null" salvo num arquivo antigo roda como Cubeb.
-  Para tirar o som, use o volume.
-- "Escala de resolução" no menu do botão PS: vai até 150 %. Com o MSAA
-  (antisserrilhamento) ligado, a escala nova vale só no próximo início
-  do jogo (mudar na hora com MSAA derrubava a GPU emulada, como no Black
-  Ops); o aviso "Escala de resolução: com MSAA ligado ela muda só no
-  próximo início (salve as configurações para mantê-la)" lembra disso.
-  Salve (Quadrado no menu) para manter.
-- Ainda no menu do botão PS: a sincronização vertical (VSync) saiu da
-  página de vídeo (mudar ela ali só recriava a tela à toa), e o buffer
-  de áudio desligado mostra "(sem buffer: o som pode pular)".
-- "Idioma dos jogos" (logo abaixo do Áudio contínuo): o idioma que os
-  jogos de PS3 recebem do sistema (seção 6.1).
+    "Vertical Sync" on Vulkan: "PS4 always displays with
+      timing (FIFO)";
+    "Audio output format" Mono: off ("PS4 output is only
+      stereo: Mono would be muted");
+    "Disk cache": between 1024 MB and 10% of the PS4's free space
+      (from 4096 to 10240 MB).
+  Values that work, but with a warning: "Enable buffering" off
+  ("without buffering the sound may skip after loads and pauses") and the
+  OpenGL ("Zink: slower and no VRAM budget") renderer. A
+  "Skip frames" help reminds: "some games refuse; may crash
+  films".
+- A padlock option that has a value saved in your file shows
+  "value saved in file no effect on PS4 Square remove":
+  Square takes this value from the file on the next Save.
+- The startup.log tells you, at each boot, which values of your files run
+  different and why, on a line like "settings: BLUS30645: 2 value(s)
+  running differently than your files: Frame limit Off->Auto
+  (auto), Resolution Scale 775->200 (PS4 limit)". The same
+  line goes to the RPCS3.log.
+- Exit with unsaved changes asks "Save changes?":
+  Save, Discard Circle, Triangle continues editing.
+- To change something just in a game: Square about the game. The file of
+  game only saves what you changed; the rest follows the settings
+  global and automatic. The game mode line switches between
+  "Automatic + your settings" and "Manual: everything as saved". "Return to
+  automatic" erases your settings for that game and "Delete:
+  config_<ID>.yml" deletes the game file (X confirms again).
+- An old game file (saved from 0.38 or earlier, or copied from
+  PC RPCS3): With "Automatic Setup", most
+  its values are NOT valid, because the automatic chooses above (it was
+  This was also the case in previous versions, but no one warned). Since
+  0.40 the game warns when opening, once per version: "N adjustment(s) of the
+  game file with no effect · Square in game > Convert". To use
+  their values: in the game mode line, X shows "Convert: N
+  value(s) become your adjustments" and X converts again.
+- Same for global settings: when your global file
+  There are values that the automatic change, the top of "RPCS3 Settings"
+  shows "Use my saved values (N)". X shows what they are, X again
+  Sets all your settings and Save records.
+- "What's new in this game" (Square above the game, just below "Mode
+  safe for this game"): "none (default)" or "Audio da 0.39" (the rules
+  audio version of 0.39 just for this game: Rango, God of War Ascension and
+  inFamous had less choppy sound with them). Valid at the next start
+  of the game. Writes /data/rpcs3/custom_configs/<TITLE_ID>.features.
+- In the PS button menu within the game (Options + Touchpad), Square
+  (Save) only records what you changed in this menu, such as your adjustment to that
+  game.
+- Settings per game the same as on PC: since 0.39 the game file
+  settings per RPCS3 PC game (config_database.dat, from the
+  GuiConfigs) already comes within PKG, and the automatic configuration uses
+  these adjustments alone: there is no need to import anything. Good to know: in
+  some games (e.g.: Lollipop Chainsaw, Wipeout HD Fury, Sonic & SEGA
+  All-Stars Racing, Dante's Inferno) it turns on "Write Color Buffers", which
+  fixes graphics but costs a little FPS. In some other games he
+  turns on the PS3's own video decoder (libvdec), which was never
+  tested on PS4: if a video freezes in one of these games, let us know (the exchange
+  appears in RPCS3.log, under "Libraries Control").
+  To use a newer copy (the one from RPCS3 on your PC): copy the
+  config_database.dat to the pendrive (root) and use "Settings" >
+  "Import config_database.dat from PC", or copy by FTP to
+  /data/rpcs3/import/ or direct to /data/rpcs3/config_database.dat.
+  The copy of /data is valid instead of the one in the package (unless both
+  are dated and the one on the package is newer). The "config database:" line
+  from startup.log says which one is valid ("bundled /app0/..." = the one from
+  package).
+- "Cool mode (less heat)": in RPCS3 Settings > PS4, next to
+  of Online Mode. When turned on, the emulator spends less CPU waiting around (less
+  heat and noise); some games lose a little FPS, more in areas
+  new ones (it compiles one thing at a time, also on the first opening
+  of a game, like in 0.38). Valid from the next game onwards. He never
+  change the fan, the clock or the PS4 settings.
+- "Avoid blinks in scenes" (just below Cold mode, it is turned off):
+the first time a scene appears, it holds the last completed image
+  while the shaders compile. You see a short pause (maximum 3/4
+  second at a time) instead of a blink. Valid from the next
+  game. It doesn't make the game faster. Since 0.37 the new scenes are almost
+  they no longer blink (section 4), so normally there is no need.
+- "Continuous audio" (just below, it says "Off (default)" since 0.40,
+  as in 0.38): "Automatic" makes the emulator make the sound a little more
+  slow (never below 70%) when the game cannot produce sound
+  in time, instead of letting it perforate, and returning to normal when the
+  game comes with it. In games that accompany it, it never enters. The voice of
+  videos may be a little late in relation to the characters' mouths
+  while he acts. "Automatic" creates /data/rpcs3/audio-continuity.flag.
+  Valid from the next game onwards.
+- "Safe mode" (PS4 tab, comes "Off (default)"): On turns off to
+  ALL games the news that applies to all games (it's the level
+  1 of the safe mode, section 10). Used to test: whether a game works
+  with it turned on and it doesn't work when turned off, send the logs of both
+  times. Valid from the next game onwards; XMB says "Safe mode on"
+  when opening. Write /data/rpcs3/safe-mode.flag.
+- "Safe mode of this game" (Square about the game): Off, Level 1,
+  2 or 3, just for that game (section 10).
+- Volume and other audio adjustments from the PS button menu (within the
+  game) are valid immediately, also when the game is in safe mode. Since
+  0.40 this menu no longer has the choice of the audio "Renderer": the PS4
+  has only one sound output, and "Null" didn't remove the sound (it only removed the buffer
+  and the sound shredded). A "Null" saved in an old file runs as Cubeb.
+  To mute the sound, use volume.
+- "Resolution scale" in the PS button menu: goes up to 150%. With MSAA
+  (anti-aliasing) on, the new scale is only valid at the next start
+  of the game (changing on the fly with MSAA took down the emulated GPU, like in Black
+  Oops); the warning "Resolution scale: with MSAA on it changes only in
+  next start (save settings to keep it)" remembers this.
+  Save (Square in menu) to keep.
+- Still in the PS button menu: vertical synchronization (VSync) has exited
+  video page (changing it there just recreated the screen for nothing), and the buffer
+  audio off shows "(no buffering: sound may skip)".
+- "Games language" (just below Continuous Audio): the language that the
+  PS3 games receive from the system (section 6.1).
 
-==========================================================================
-6.1 IDIOMA (IDIOMA · LANGUAGE · اللغة)
-==========================================================================
-- A XMB, as janelas, os avisos e o menu de configurações existem em
-  Português (Brasil), English, Español e العربية (árabe).
-- Automático (padrão): segue o idioma do PS4. PS4 em português (Brasil
-  ou Portugal) -> português; em espanhol (Espanha ou América Latina) ->
-  espanhol; em árabe -> árabe; em inglês ou em qualquer outro idioma ->
-  inglês.
-- Para escolher: XMB > Configurações > "Idioma · Language · اللغة" (o
-  mesmo título em qualquer idioma, para achar fácil). X ou Direita passa
-  para o próximo (Automático, Português, English, Español, العربية),
-  Esquerda volta. Muda na hora e fica guardado para as próximas vezes.
-  Também dá para gravar pelo FTP o arquivo /data/rpcs3/ui-language.txt
-  com uma palavra: auto, pt-BR, en, es ou ar.
-- Em árabe a XMB fica da direita para a esquerda, com as letras ligadas.
-  Nomes de jogos, caminhos e números continuam como são.
-- As telas de sistema dentro do jogo (troféus, lista de saves, teclado,
-  menu do botão PS) ficam em português, inglês ou espanhol; com a XMB em
-  árabe elas aparecem em inglês.
-- "Idioma dos jogos" (Configurações do RPCS3): o idioma que os jogos de
-  PS3 recebem do sistema, como no PS3 (vale para os textos e vozes do
-  próprio jogo, quando o jogo tem esse idioma). Automático = Inglês
-  (EUA), como até a 0.38 (na 0.39 era o idioma do PS4, e um jogo sem
-  esse idioma podia travar, como o God of War). "Idioma do PS4" = o
-  idioma do PS4 (ou o da XMB, se você escolheu um); ou escolha um dos
-  20 idiomas do PS3. X ou Esquerda/Direita muda; vale no próximo boot
-  do jogo. Para um jogo só: Quadrado sobre o jogo > "Idioma deste jogo"
-  (começa em "Igual ao global").
+========================================================================================
+6.1 LANGUAGE (LANGUAGE · اللغة)
+========================================================================================
+- XMB, windows, warnings and settings menu exist in
+  Portuguese (Brazil), English, Español and العربية (Arabic).
+- Automatic (default): follows the PS4 language. PS4 in Portuguese (Brazil
+  or Portugal) -> Portuguese; in Spanish (Spain or Latin America) ->
+  Spanish; in Arabic -> Arabic; in English or any other language ->
+  English.
+- To choose: XMB > Settings > "Language · Language · اللغة" (the
+  same title in any language, so it's easy to find). X or Right passes
+  to the next (Automatic, Portuguese, English, Español, العربية),
+  Left turn. Change it instantly and save it for future times.
+  You can also save the /data/rpcs3/ui-language.txt file using FTP
+  with one word: auto, pt-BR, en, es or ar.
+- In Arabic, XMB is from right to left, with the letters connected.
+  Game names, paths and numbers remain as they are.
+- System screens within the game (trophies, save list, keyboard,
+  PS button menu) are in Portuguese, English or Spanish; with XMB in
+  Arabic they appear in English.
+- "Game language" (RPCS3 Settings): the language that game
+  PS3 receive from the system, as on PS3 (applies to the texts and voices of the
+  game itself, when the game has this language). Automatic = English
+  (USA), like until 0.38 (in 0.39 it was the PS4 language, and a game without
+  this language could crash, like God of War). "PS4 language" = o
+  PS4 language (or XMB's, if you chose one); or choose one of
+  20 PS3 languages. X or Left/Direita changes; valid on next boot
+  of the game. For just one game: Square about the game > "Language of this game"
+  (starts at "Same as global").
 
-==========================================================================
-6.2 FUNDO E MÚSICA DO JOGO NA XMB
-==========================================================================
-- Como no PS3: quando a seleção para num jogo da coluna "Jogo" (meio
-  segundo), a XMB mostra o fundo do próprio jogo (PIC1, com o PIC0 por
-  cima quando o jogo tem) e toca a música dele (SND0). Ao sair do jogo
-  na lista, o fundo volta às ondas e a música some devagar.
-- Só os arquivos do PRÓPRIO jogo: jogo sem música fica em silêncio, e
-  jogo sem fundo fica com as ondas normais. O emulador não traz, não
-  inventa e não troca música nem imagem nenhuma.
-- Funciona com jogos em pasta, da PSN, ISOs (as criptografadas só depois
-  que a chave estiver no PS4) e discos já instalados. Um PKG ainda não
-  instalado e um disco ainda não instalado não têm fundo.
-- Antes de cada jogo abrir, a música para e tudo é liberado (som,
-  imagens, memória): o jogo começa igual a antes, sem nada da XMB.
-- Rolando a lista rápido nada é lido: só o jogo onde você para.
-- Botão PS com a música tocando: ela para; ao voltar, toca de novo.
-  Nas janelas do disco e da ISO (instalar, chave, cadeado) a música
-  também para; o fundo fica atrás da janela.
+========================================================================================
+6.2 GAME BACKGROUND AND MUSIC ON XMB
+========================================================================================
+- As on PS3: when the selection stops on a game in the "Game" column (middle
+  second), XMB shows the background of the game itself (PIC1, with PIC0 by
+  up when the game has it) and plays his music (SND0). When leaving the game
+  in the list, the background returns to the waves and the music slowly disappears.
+- Only the game's OWN files: game without music is silent, and
+  bottomless game stays with normal waves. The emulator does not bring
+  invents and does not change any music or images.
+- Works with folder games, PSN, ISOs (those encrypted only after
+  key is in the PS4) and discs already installed. A PKG has not yet
+  installed and a disc not yet installed have no background.
+- Before each game opens, the music stops and everything is released (sound,
+  images, memory): the game starts the same as before, without anything from XMB.
+- When scrolling through the list quickly, nothing is read: just the game where you stop.
+- PS button with the music playing: it stops; when it comes back, it rings again.
+  In the disk and ISO windows (install, key, padlock) the song
+  also for; the background is behind the window.
 
-Onde ligar e desligar: coluna "Configurações" da XMB, logo abaixo de
-"Idioma · Language · اللغة"
-- "Fundo e música do jogo: Ligado" (padrão) ou "Desligado". X muda, e
-  vale na hora. Desligado grava o arquivo /data/rpcs3/xmb-media-off.flag
-  (criar esse arquivo pelo FTP faz o mesmo).
-- "Música do jogo: Ligada" (padrão), "Baixa" ou "Desligada". X ou
-  Esquerda/Direita muda, e vale na hora. Fica guardado em
-  /data/rpcs3/xmb-music.txt (low = Baixa, off = Desligada; sem o
-  arquivo = Ligada). Só vale com o "Fundo e música do jogo" ligado.
-- Os fundos já vistos ficam guardados em /data/rpcs3/cache/xmb/media
-  (no máximo uns 96 MB; os mais antigos saem sozinhos). Pode apagar
-  essa pasta: ela é feita de novo.
+Where to turn it on and off: XMB's "Settings" column, just below
+"Language · Language · اللغة"
+- "Game background and music: On" (default) or "Off". X changes, and
+  worth it at the time. Off writes the /data/rpcs3/xmb-media-off.flag file
+  (creating this file through FTP does the same).
+- "Game music: On" (default), "Low" or "Off". X or
+  Left /Direita changes, and it counts immediately. It is stored in
+  /data/rpcs3/xmb-music.txt (low = Low, off = Off; without the
+  file = On). Only valid with "Game background and music" turned on.
+- Funds already viewed are saved in /data/rpcs3/cache/xmb/media
+  (maximum around 96 MB; older ones come out on their own). You can delete
+  this folder: it is made again.
 
-Se a música picotar ou o fundo não aparecer
-- Mande o startup.log e o RPCS3.log da sessão (seção 10). As linhas
-  "XMB media: ..." e "XMB music: ..." dizem o que foi lido de cada jogo
-  e quantas vezes o som picotou ("underrun(s)").
+If the music stutters or the background doesn't appear
+- Send the startup.log and RPCS3.log of the session (section 10). The lines
+  "XMB media: ..." and "XMB music: ..." tell you what was read from each game
+  and how many times the sound peaked ("underrun(s)").
 
-==========================================================================
-7. PATCHES DE JOGOS
-==========================================================================
-- Pelo FTP do GoldHEN (o jeito mais fácil): copie o patch.yml do RPCS3
-  do PC (pasta patches) para /data/rpcs3/patches/. Ele vale direto, sem
-  importar. Também dá para copiar para /data/rpcs3/import/ (ou deixar o
-  patch.yml solto em /data/rpcs3/) e usar "Configurações" > "Importar
-  patches de jogos".
-- Pelo pendrive: coloque o patch.yml em rpcs3/patches/ ou na raiz do
-  pendrive e use "Configurações" > "Importar patches de jogos".
-- A importação sempre diz o resultado na tela (ex.: "Patches importados:
-  patch.yml (N patches)", "já está em /data/rpcs3/patches", "não é um
-  arquivo de patch") e grava a mesma frase no startup.log, na linha
-  "patches: import result:", com cada lugar que foi procurado.
-- Baixar: "Configurações" > "Baixar patches do RPCS3" (precisa de
-  internet no PS4 e da data e hora do PS4 certas). Ao abrir, o emulador
-  testa sozinho a conexão segura, sem usar a internet (linha "TLS
-  self-test:" do startup.log). Se o teste falhar, o item diz "Download
-  indisponível": use o FTP ou o pendrive.
-- Ligar/desligar: sobre o jogo, aperte R1, escolha o patch e aperte X.
-  Vale a partir da próxima vez que o jogo abrir.
-- Recomendados no PS4: com o patch.yml importado ou baixado, alguns
-  patches que deixam jogos pesados mais leves ligam sozinhos (por
-  exemplo "Disable SPU MLAA" em God of War: Ascension e God of War III:
-  mais FPS, bordas um pouco serrilhadas). Na lista eles aparecem com
-  "recomendado no PS4"; X desliga só naquele jogo. Eles só ligam
-  sozinhos com a "Configuração automática" do jogo. Os marcados
-  "sugerido no PS4" nunca ligam sozinhos: ligue se o jogo estiver lento.
-  Quadrado mostra o motivo.
+========================================================================================
+7. GAME PATCHES
+========================================================================================
+- By FTP from GoldHEN (the easiest way): copy the patch.yml from RPCS3
+  from the PC (patches folder) to /data/rpcs3/patches/. It is valid directly, without
+  import. You can also copy it to /data/rpcs3/import/ (or leave the
+  patch.yml dropped into /data/rpcs3/) and use "Settings" > "Import
+  game patches."
+- From the pendrive: place the patch.yml in rpcs3/patches/ or in the root of the
+  pendrive and use "Settings" > "Import game patches".
+- The import always says the result on the screen (e.g.: "Imported patches:
+  patch.yml (N patches)", "already in /data/rpcs3/patches", "not a
+  patch file") and writes the same sentence to startup.log, on the line
+  "patches: import result:", with each place that was searched.
+- Download: "Settings" > "Download RPCS3 patches" (needs
+  internet on PS4 and the correct PS4 date and time). When opening, the emulator
+  tests the secure connection alone, without using the internet ("TLS
+  self-test:" from startup.log). If the test fails, the item says "Download
+  unavailable": use FTP or the pendrive.
+- Turn on /desligar: about the game, press R1, choose the patch and press X.
+  It's valid the next time the game opens.
+- Recommended on PS4: with patch.yml imported or downloaded, some
+  patches that make heavy games lighter turn on by themselves (e.g.
+  example "Disable SPU MLAA" in God of War: Ascension and God of War III:
+  more FPS, slightly jagged edges). In the list they appear with
+  "recommended on PS4"; X only turns off in that game. They just call
+  alone with the game's "Auto Setup". Those marked
+  "suggested on PS4" never turn on by themselves: turn on if the game is slow.
+  Square shows the reason.
 
-==========================================================================
-7.1 CHEATS (CÓDIGOS ARTEMIS/NETCHEAT)
-==========================================================================
-São os códigos de memória do PS3 (NetCheat e Artemis, linhas como
-"0 01234560 05F5E0FF") e os cheats do RPCS3 de PC (cheats.yml).
-Códigos "Action Replay PS3", "Game Genie PS3" e "Apollo" NÃO são cheats
-de memória: eles editam saves no PC e não funcionam aqui.
+========================================================================================
+7.1 CHEATS (ARTEMIS/NETCHEAT CODES)
+========================================================================================
+These are the PS3 memory codes (NetCheat and Artemis, lines like
+"0 01234560 05F5E0FF") and the RPCS3 PC cheats (cheats.yml).
+"Action Replay PS3", "Game Genie PS3" and "Apollo" codes are NOT cheats
+memory: they edit saves on the PC and don't work here.
 
-Onde colocar os arquivos (o nome é o TITLE_ID do jogo, ex. BLUS30443):
-- Pelo FTP: /data/rpcs3/cheats/BLUS30443.txt (ou .ncl), ou o cheats.yml
-  do RPCS3 de PC como /data/rpcs3/cheats/BLUS30443.yml. Valem direto.
-- Pelo pendrive: pasta cheats/ ou rpcs3/cheats/ na raiz; ou pelo FTP em
-  /data/rpcs3/import/cheats/. Depois use "Importar cheats para este
-  jogo" (na lista de cheats do jogo) ou "Configurações" > "Importar
-  cheats de todos os jogos" (um cheats.yml do PC é separado pelos nomes
-  dos jogos da biblioteca). O arquivo de origem fica onde está; o
-  resultado aparece na tela e no startup.log ("cheats: import result:").
-- Arquivo .txt sem o TITLE_ID no nome: ponha a linha "; serial:
-  BLUS30443" no começo, ou importe pela lista do próprio jogo.
+Where to put the files (the name is the TITLE_ID of the game, e.g. BLUS30443):
+- By FTP: /data/rpcs3/cheats/BLUS30443.txt (or .ncl), or cheats.yml
+  of PC RPCS3 as /data/rpcs3/cheats/BLUS30443.yml. They are valid directly.
+- From the pendrive: cheats/ or rpcs3/cheats/ folder in the root; or by FTP at
+  /data/rpcs3/import/cheats/. Then use "Import cheats into this
+  game" (in the game's cheat list) or "Settings" > "Import
+  cheats for all games" (a PC cheats.yml is separated by the names
+  library games). The source file stays where it is; the
+  result appears on the screen and in startup.log ("cheats: import result:").
+- .txt file without TITLE_ID in the name: put the line "; serial:
+  BLUS30443" at the beginning, or import it from the game's own list.
 
-Usar
-1. Sobre o jogo na XMB, aperte R2 (ou R1 > primeira linha "Cheats").
-   Cada cheat aparece com o interruptor: verde ligado, cinza desligado.
-   Todos começam DESLIGADOS.
-2. X liga/desliga. Vale a partir da próxima vez que o jogo abrir.
-   Um cheat do RPCS3 de PC pede o valor no teclado na primeira vez.
-3. Quadrado: opções do cheat (no Modo e no Intervalo, X ou Direita passa
-   para o próximo valor, Esquerda volta)
-   - Modo: Automático (o emulador decide), Constante (reescrito o tempo
-     todo), Uma vez (10 s depois que o jogo começa) ou No início do jogo.
-     Códigos que mudam o código do jogo são sempre escritos no início
-     ("no início do jogo (código)"): o primeiro início depois de ligar
-     compila um pouco a mais, como um patch.
-   - Intervalo: 16 a 1000 ms (padrão 100 ms), para os constantes.
-   - Ver linhas: as linhas do cheat e cada erro com o número da linha.
-   - Editar códigos / Renomear / Apagar: só nos cheats criados no PS4.
-     Os importados: "Copiar para meus cheats" primeiro.
-   - Valor: o valor dos cheats do RPCS3 de PC.
-4. Triângulo lê os arquivos de novo. Círculo volta.
-5. "Adicionar cheat (teclado)": primeiro o nome, depois os códigos (o
-   segundo teclado abre um instante depois que o primeiro fecha).
-   Separe as linhas com ";" (ex.: "0 01234560 05F5E0FF; 2 00A1B2C0
-   1.5"). Se uma linha estiver errada, o teclado abre de novo com o seu
-   texto e o motivo ("Linha 2: ..."). Ficam em
-   /data/rpcs3/cheats/BLUS30443_user.txt, em texto Artemis/NetCheat
-   (dá para copiar para o PC ou para um fórum).
-6. Dentro do jogo: menu do botão PS (Options + Touchpad) > "Cheats" liga
-   e desliga na hora os cheats constantes e de uma vez; os de início de
-   jogo mudam para a próxima vez ("(próximo início)").
+Use
+1. About the game on XMB, press R2 (or R1 > first line "Cheats").
+   Each cheat appears with the switch: green on, gray off.
+   They all start OFF.
+2. X liga/desliga. Valid from the next time the game opens.
+   A RPCS3 PC cheat asks for the value on the keyboard the first time.
+3. Square: cheat options (in Mode and Range, X or Right passes
+   to the next value, Left turn)
+   - Mode: Automatic (the emulator decides), Constant (rewrites the time
+     all), Once (10 s after the game starts) or At the start of the game.
+     Codes that change the game code are always written at the beginning
+     ("at the start of the game (code)"): the first start after turning on
+     compiles a little more, like a patch.
+   - Range: 16 to 1000 ms (default 100 ms), for constants.
+   - View lines: the cheat lines and each error with the line number.
+   - Edit codes / Rename / Delete: only for cheats created on PS4.
+     Imported ones: "Copy to my cheats" first.
+   - Value: the value of the RPCS3 PC cheats.
+4. Triangle reads the files again. Circle back.
+5. "Add cheat (keyboard)": first the name, then the codes (the
+   second keyboard opens an instant after the first closes).
+   Separate lines with ";" (e.g.: "0 01234560 05F5E0FF; 2 00A1B2C0
+   1.5"). If a line is wrong, the keyboard opens again with your
+   text and reason ("Line 2: ..."). Stay in
+   /data/rpcs3/cheats/BLUS30443_user.txt, in text Artemis/NetCheat
+   (you can copy it to your PC or to a forum).
+6. Inside the game: PS button menu (Options + Touchpad) > "Cheats" turns on
+   and instantly turn off constant cheats all at once; those at the beginning of
+   game change to next time ("(next start)").
 
-Bom saber
-- Tipos de código aceitos agora: 0 (escrever), 1 (texto), 2 (número
-  decimal) e 4 (série). Os tipos 6, A, B, D, E e F aparecem como "ainda
-  não suportado no PS4" até termos arquivos de exemplo para testar.
-- Códigos de outra versão do jogo aparecem com "Códigos para a versão
-  ...; instalada: ..." e podem não funcionar. Um endereço que não existe
-  no jogo desliga o cheat sozinho depois de 1 minuto, com um aviso.
-- Com o "Modo online" (RPCN) ligado, a lista e o aviso ao ligar lembram:
-  cheats podem afetar troféus e placares online. Nada é bloqueado.
-- Um savestate já guarda o efeito dos cheats que estavam ligados.
+Good to know
+- Code types now accepted: 0 (write), 1 (text), 2 (number
+  decimal) and 4 (series). Types 6, A, B, D, E and F appear as "still
+  not supported on PS4" until we have sample files to test with.
+- Codes from another version of the game appear with "Codes for version
+  ...; installed: ..." and may not work. An address that does not exist
+  In the game, the cheat turns off by itself after 1 minute, with a warning.
+- With "Online Mode" (RPCN) turned on, the list and warning when switching on reminds:
+  Cheats can affect trophies and online leaderboards. Nothing is blocked.
+- A savestate already stores the effect of cheats that were turned on.
 
-==========================================================================
+========================================================================================
 8. ONLINE (RPCN)
-==========================================================================
-O RPCN é o servidor online do próprio RPCS3 (não usa servidores da
+========================================================================================
+RPCN is RPCS3's own online server (it does not use servers from
 Sony).
-1. Coluna "PlayStation Network" > "Modo online": ligue.
-2. Conta: use "Importar rpcn.yml do PC" (copie o rpcn.yml do RPCS3 do PC
-   para o pendrive, em rpcs3/rpcn.yml ou na raiz) ou "Entrar com uma
-   conta RPCN" pelo teclado da tela. Também dá para "Criar conta RPCN"
-   (o código chega no seu e-mail; digite-o em "Digitar o token do
+1. "PlayStation Network" column > "Online mode": switch on.
+2. Account: use "Import rpcn.yml from PC" (copy rpcn.yml from RPCS3 from PC
+   to the pendrive, in rpcs3/rpcn.yml or in the root) or "Enter with a
+   account RPCN" via the on-screen keyboard. You can also "Create RPCN account"
+   (the code arrives in your email; enter it in "Enter the token
    email").
-3. UPnP fica desligado até você ligar no mesmo menu.
-Modo online ligado SEM conta RPCN: desde a 0.40 o jogo abre offline
-(antes alguns jogos, como o Minecraft, ficavam presos tentando conectar).
-Não precisa desligar o Modo online por isso.
-O teclado da tela e a conexão com o RPCN ainda estão em teste no PS4:
-se não funcionarem, envie os logs (seção 10).
-Teclado (0.40): quando um formulário pede dois textos seguidos (usuário
-e senha do RPCN, usuário e e-mail ao criar a conta, nome e códigos de um
-cheat), o segundo teclado abre um instante depois que o primeiro fecha.
-Antes o PS4 recusava abrir o segundo colado no primeiro. Se ainda
-aparecer "O teclado do sistema não abriu", o PS4 recusou o teclado:
-tente de novo, ou use "Importar rpcn.yml do PC".
-Jogos muito pesados rodam melhor offline.
+3. UPnP is turned off until you turn it on in the same menu.
+Online mode on WITHOUT RPCN account: since 0.40 the game opens offline
+(Previously some games, like Minecraft, would get stuck trying to connect).
+You don't need to turn off Online Mode for this reason.
+The on-screen keyboard and connection to RPCN are still being tested on PS4:
+if they don't work, send the logs (section 10).
+Keyboard (0.40): when a form requests two texts in a row (user
+and RPCN password, username and email when creating an account, name and codes
+cheat), the second keyboard opens an instant after the first closes.
+Previously, the PS4 refused to open the second one glued to the first. If still
+"The system keyboard did not open" appears, the PS4 refused the keyboard:
+try again, or use "Import rpcn.yml from PC".
+Very heavy games run better offline.
 
-==========================================================================
-9. DICAS DE DESEMPENHO
-==========================================================================
-- PS4 Pro: ative o Modo Turbo em Configurações > Sistema > Modo Turbo
-  (Boost Mode). É o maior ganho que existe: a CPU passa de ~1,6 GHz
-  para ~2,1 GHz (cerca de 31% a mais) em todos os jogos. Se o seu Pro
-  estiver sem ele, o emulador avisa ao abrir o primeiro jogo, e
-  "Informações do sistema" mostra o clock medido. O Modo Turbo também
-  esquenta um pouco mais o console. PS4 Fat e Slim não têm Modo Turbo.
-- Em jogos tipo Minecraft, diminua a distância de renderização.
-- Mantenha alguns GB livres no PS4 (o emulador avisa se o espaço estiver
-  acabando).
-- Jogos muito pesados de PS3 rodam com FPS baixo no processador do PS4:
-  a CPU do PS4 é várias vezes mais lenta por núcleo que a de um PC.
-  Jogos leves e médios podem rodar bem; jogos pesados (ex.: God of War:
-  Ascension nas lutas, Wolverine, corridas como Wipeout e Sonic) ficam
-  por volta de 5 a 15 FPS nas cenas pesadas, mesmo com o Modo Turbo e
-  os patches recomendados (menos sem o Modo Turbo).
-- Importe o patch.yml (ou use "Baixar patches do RPCS3"): muitos jogos
-  dependem dos patches do PC. Os ajustes por jogo do PC
-  (config_database.dat) já vêm no pacote.
-- Som picotando em jogo pesado: normalmente é o jogo emulado que não
-  consegue produzir o som a tempo. Experimente o "Áudio contínuo" em
-  "Automático" (seção 6): o som fica contínuo, um pouco mais lento. Na
-  0.40 ele vem desligado, como na 0.38. Alguns jogos (Rango, God of War
-  Ascension, inFamous) também picotam menos com "Novidades neste jogo:
-  Áudio da 0.39" (seção 6). Deixe "Ativar buffer" ligado: sem buffer o
-  som pode pular depois de cargas e pausas.
-- "Pular quadros" (Frame Skip): alguns jogos se recusam a pular quadros,
-  e ele pode travar os filmes de alguns jogos (é o principal suspeito do
-  filme parado do God of War Ascension). Se um filme travar, desligue e
-  teste de novo.
-- Cache de shaders do driver de vídeo: desde a 0.40 vem desligado, como
-  até a 0.38 (ele usava vagas de thread que os jogos precisavam). Para
-  testar: crie /data/rpcs3/mesa-cache.flag e abra o RPCS3 de novo; a
-  segunda vez que um jogo abre compila menos (os shaders ficam em
-  /data/rpcs3/cache/mesa, até 512 MB).
+========================================================================================
+9. PERFORMANCE TIPS
+========================================================================================
+- PS4 Pro: activate Turbo Mode in Settings > System > Turbo Mode
+  (Boost Mode). It's the biggest gain there is: the CPU goes from ~1.6 GHz
+  to ~2.1 GHz (about 31% more) in all games. If your Pro
+  is without it, the emulator warns you when opening the first game, and
+  "System Information" shows the measured clock. Turbo Mode also
+  heats up the console a little more. PS4 Fat and Slim do not have Turbo Mode.
+- In Minecraft-type games, decrease the render distance.
+- Keep a few GB free on your PS4 (the emulator warns you if space is running low).
+  running out).
+- Very heavy PS3 games run with low FPS on the PS4 processor:
+  the PS4's CPU is several times slower per core than a PC's.
+  Light and medium games can run well; heavy games (e.g. God of War:
+  Ascension in fights, Wolverine, races like Wipeout and Sonic) are
+  around 5 to 15 FPS in heavy scenes, even with Turbo Mode and
+  the recommended patches (except without Turbo Mode).
+- Import patch.yml (or use "Download patches from RPCS3"): many games
+  depend on PC patches. PC game settings
+  (config_database.dat) are already included in the package.
+- Chopping sound in heavy games: it is usually the emulated game that does not
+  can produce the sound in time. Try "Seamless Audio" at
+  "Automatic" (section 6): the sound is continuous, a little slower. In
+  0.40 it is turned off, as in 0.38. Some games (Rango, God of War
+  Ascension, inFamous) are also less noticeable with "News in this game:
+  0.39" audio (section 6). Leave "Enable buffering" on: no buffering
+  Sound may skip after loads and pauses.
+- "Frame Skip": some games refuse to skip frames,
+  and it can crash the movies of some games (it's the main suspect of
+  God of War Ascension movie stopped). If a movie freezes, turn it off and
+  test again.
+- Video driver shader cache: since 0.40 it has been turned off, as
+  until 0.38 (it used thread slots that games needed). For
+  test: create /data/rpcs3/mesa-cache.flag and open RPCS3 again; to
+  The second time a game is opened it compiles less (the shaders are in
+  /data/rpcs3/cache/mesa, up to 512 MB).
 
-==========================================================================
-9.1 TEMPERATURA E VENTILAÇÃO
-==========================================================================
-- O PS4 não deixa aplicativos lerem o sensor de temperatura (a leitura
-  volta com erro em todos os consoles testados, Slim e Pro). Por
-  isso o emulador não consegue medir a temperatura nem pausar o jogo
-  por calor.
-- Quem protege o console é o próprio PS4: ele acelera a ventoinha, mostra
-  o aviso de console muito quente e desliga antes de se danificar.
-- O que ajuda de verdade: 10 a 15 cm livres em volta das saídas de ar;
-  nada de rack fechado, pano ou tapete embaixo; limpar a poeira das
-  entradas e saídas de ar (ar comprimido); ambiente mais fresco. Console
-  antigo e muito barulhento: limpeza interna e pasta térmica com um
-  técnico.
-- "Modo frio (menos calor)" em Configurações do RPCS3 reduz o tempo de
-  CPU gasto à toa (alguns jogos perdem um pouco de FPS, mais em áreas
-  novas).
-- O emulador nunca mexe na ventoinha, no clock, na energia nem no
-  sistema do PS4.
+========================================================================================
+9.1 TEMPERATURE AND VENTILATION
+========================================================================================
+- The PS4 won't let apps read the temperature sensor (the reading
+  returns with error on all tested consoles, Slim and Pro). By
+  This means the emulator cannot measure the temperature or pause the game
+  by heat.
+- The one who protects the console is the PS4 itself: it speeds up the fan, it shows
+  the console warning too hot and shuts down before it gets damaged.
+- What really helps: 10 to 15 cm free space around the air vents;
+  no closed rack, cloth or rug underneath; clean the dust from
+  air inlets and outlets (compressed air); cooler environment. Console
+  old and very noisy: internal cleaning and thermal paste with a
+  technical.
+- "Cool mode (less heat)" in RPCS3 Settings reduces the
+  CPU wasted for nothing (some games lose a little FPS, more in areas
+  new).
+- The emulator never changes the fan, clock, power or
+  PS4 system.
 
-==========================================================================
-10. SE DER PROBLEMA
-==========================================================================
-- A mensagem de erro aparece na tela e de novo no próximo início.
-- Os registros das últimas 8 sessões ficam em
-  /data/rpcs3/log/history/0 a 7 (startup.log, RPCS3.log, mesa.log,
-  fatal.txt). Envie esses arquivos para quem for te ajudar: SEMPRE o
-  startup.log junto com o RPCS3.log e o mesa.log da mesma sessão (só o
-  RPCS3.log não basta). Copie os logs só depois de fechar o RPCS3
-  (botão PS > Fechar aplicativo): um log copiado com o emulador aberto
-  vem cortado.
-- Se a tela parar, espere 1 minuto antes de fechar pelo botão PS. Se
-  vier "RPCS3: o jogo travou no vídeo; segure PS e feche o
-  aplicativo.", feche pelo botão PS e mande os logs.
-- "O jogo emulado travou (acesso inválido à memória ...): voltou ao
-  menu": o jogo parou por um erro dele dentro do emulador e a XMB voltou
-  sozinha. Dá para abrir outro jogo sem fechar o aplicativo; mande os
+========================================================================================
+10. IF THERE IS A PROBLEM
+========================================================================================
+- The error message appears on the screen and again at the next start.
+- Records of the last 8 sessions are in
+  /data/rpcs3/log/history/0 to 7 (startup.log, RPCS3.log, mesa.log,
+  fatal.txt). Send these files to whoever will help you: ALWAYS
+  startup.log together with RPCS3.log and mesa.log from the same session (only the
+  RPCS3.log is not enough). Copy logs only after closing RPCS3
+  (PS button > Close application): a log copied with the emulator open
+  comes cut.
+- If the screen stops, wait 1 minute before closing with the PS button. Se
+  comes "RPCS3: the game has frozen in the video; hold PS and close the
+  application.", close it using the PS button and send the logs.
+- "The emulated game crashed (invalid memory access...): returned to
+  menu": the game stopped due to an error within the emulator and XMB returned
+  alone. You can open another game without closing the application; send the
   logs.
-- Se a GPU parar de responder, o jogo fecha e volta para a XMB; nas
-  próximas aberturas desse jogo o emulador usa um modo de shaders mais
-  seguro e o modo seguro (abaixo).
-- MODO SEGURO AUTOMÁTICO (0.40): quando um jogo falha (erro no
-  emulador, falta de threads, jogo parado sem progresso por minutos, GPU
-  travada), a próxima abertura DESSE jogo vem no modo seguro, com o
-  aviso "RPCS3: <jogo> falhou da última vez (<motivo>): abrindo no modo
-  seguro, nível N de 3". Cada vez que ele falha de novo sobe um nível:
-    nível 1: as novidades que valem para todos os jogos ficam
-      desligadas (como na 0.38) e algumas proteções da 0.39 também; com
-      falta de threads, menos threads; com a GPU travada, shaders "Async
+- If the GPU stops responding, the game closes and returns to XMB; in
+  next openings of this game the emulator uses a more shader mode
+  safe and safe mode (below).
+- AUTOMATIC SAFE MODE (0.40): when a game crashes (error in
+  emulator, lack of threads, game stopped without progress for minutes, GPU
+  locked), the next opening of THAT game comes in safe mode, with the
+  warning "RPCS3: <game> failed last time (<reason>): opening in mode
+  safe, 3" N level. Each time he fails again he goes up one level:
+    level 1: the news that applies to all games remains
+      turned off (as in 0.38) and some protections from 0.39 too; with
+      lack of threads, fewer threads; with GPU locked, shaders "Async
       Recompiler";
-    nível 2: também sem o online, com 1 thread de compilação e sem os
-      ajustes do RPCS3 de PC para esse jogo (desde a 0.40, quando o
-      motivo foi falta de threads, os ajustes do PC continuam: eles não
-      gastam threads e corrigem gráficos);
-    nível 3: também sem o timer de alta resolução e com shaders "Async
-      Recompiler" sem o intérprete.
-  Em todos os níveis, os ajustes de áudio do menu do botão PS continuam
-  valendo na hora (desde a 0.40).
-  O nível vale nas próximas 8 aberturas do jogo; se o jogo funcionar
-  bem nele (10 minutos ou mais), continua. Se falhar também no nível 3,
-  o aviso pede os logs: mande o startup.log e o RPCS3.log. Fechar pelo
-  botão PS não conta como falha.
-- Para escolher na mão: Quadrado sobre o jogo > "Modo seguro deste
-  jogo"; X muda entre Desligado, Nível 1, Nível 2 e Nível 3 (vale no
-  próximo boot do jogo). A linha "Ajuste automático após falha" mostra
-  "Modo seguro: nível N (<motivo>)"; X nela remove o que foi anotado
-  para o jogo. Se você fechar um jogo logo depois de abrir (os menus
-  funcionam, mas o jogo não carrega), a próxima abertura do RPCS3
-  lembra: "RPCS3: <jogo> não funcionou? Na lista de jogos: Quadrado no
-  jogo > Modo seguro deste jogo".
-- "A ISO deste jogo está incompleta ...: copie-a de novo.": a ISO foi
-  copiada pela metade. Copie de novo; reabrir o RPCS3 não resolve.
-- Som que sumia depois de apertar o botão PS e voltar (perto do limite
-  de threads: PES 2013, inFamous, Splinter Cell, God of War): corrigido
-  na 0.40. A saída de som fica parada durante a pausa em vez de ser
-  fechada e aberta de novo. Se o som ainda sumir, mande os logs.
-- Filme do jogo parado ou tela preta no filme (God of War Collection,
-  Demon's Souls, E.X. Troopers): quase sempre faltaram vagas de thread
-  do PS4 (o limite é uns 80). A 0.40 devolve mais vagas e, quando o PS4
-  recusa um decodificador de filme ou de música, espera uma vaga e tenta
-  de novo uma vez. Se o filme ainda parar, mande os logs.
-- "Sem vagas de thread para o savestate agora: o savestate foi
-  cancelado e o jogo continua": não havia thread livre para o savestate
-  (antes o emulador fechava). Continue jogando e tente mais tarde, ou
-  salve pelo próprio jogo. "Sem vagas de thread para o savestate: o jogo
-  foi fechado sem salvar o estado": o mesmo ao fechar com savestate.
-- "Memória de vídeo esgotada no OpenGL: use o Vulkan": no OpenGL a
-  memória de vídeo acabou e o jogo foi fechado (antes ele travava com um
-  erro de formato). Use o Renderizador Vulkan nesse jogo.
-- Gráficos que somem enquanto uma cena nova carrega: enquanto um shader
-  compila o emulador pula o desenho, e até a 0.39 o jogo achava que o
-  objeto estava escondido (provável causa do Sonic 06 sem a fase e sem o
-  Sonic, e dos jogadores invisíveis no PES 2013). Desde a 0.40 um
-  desenho pulado nunca conta como escondido. Se ainda faltar alguma
-  coisa, mande os logs.
-- Jogo que perdeu a GPU ("device lost", GTA IV, Splinter Cell): nos
-  próximos 8 boots desse jogo o emulador manda os comandos da GPU em
-  partes menores.
-- Quem testa versões novas: o arquivo TESTAR_NO_PS4.txt explica cada
-  arquivo que liga ou desliga uma novidade (NOVIDADES DA 0.40) e o que
-  mandar de cada teste.
-- Se a XMB mostrar a janela "Ocorreu um erro no emulador." ou "O
-  emulador precisa reiniciar após o erro anterior." ("Para jogar de
-  novo, feche o aplicativo pelo botão PS e abra-o outra vez."), feche
-  pelo botão PS > Fechar aplicativo e abra de novo. Depois de um erro
-  no emulador nenhum jogo abre até reabrir o aplicativo (o que a thread
-  com erro segurava não volta mais); a XMB continua funcionando para o
-  resto. O jogo que você escolheu abre sozinho quando o aplicativo for
-  aberto de novo. Se ele fechar de novo com o mesmo erro, a XMB diz
-  "fechou de novo com o mesmo erro: reabrir o RPCS3 não resolve":
-  escolha outro jogo e mande os logs.
-- "RPCS3: memória de vídeo esgotada. O jogo será fechado e você volta
-  ao menu.": o jogo fecha sozinho e volta para a XMB (em vez de travar),
-  com a janela "A memória de vídeo se esgotou e o jogo foi fechado.".
-  Pode abrir o jogo de novo; nas próximas vezes o emulador guarda menos
-  coisas na memória de vídeo nesse jogo.
-- "RPCS3: memória do emulador baixa. Salve o jogo; ...": o emulador
-  está com pouca memória e compila mais devagar até ela voltar. Salve
-  quando puder. Se vier "Memória do emulador quase esgotada: salve o jogo
-  agora e reinicie o aplicativo depois", salve logo e, antes do próximo
-  jogo, feche pelo botão PS > Fechar aplicativo e abra de novo.
-- "RPCS3: memória JIT esgotada, parte do código SPU roda em modo
-  interpretado (lento). Salve o jogo e reinicie o aplicativo.": o jogo
-  continua, mais lento. Salve, feche pelo botão PS > Fechar aplicativo
-  e abra de novo.
-- Contador de FPS nas janelas de instalação: não é do emulador, é o do
-  GoldHEN. Para tirar, desligue a opção de FPS no menu do GoldHEN.
-- Jogos que não funcionam no RPCS3 do PC também não funcionam aqui.
+    level 2: also without online, with 1 compilation thread and without the
+      PC RPCS3 adjustments for this game (since 0.40, when the
+      reason was lack of threads, PC adjustments continue: they do not
+      waste threads and fix graphics);
+    level 3: also without the high resolution timer and with "Async" shaders
+      Recompiler" without the interpreter.
+  At all levels, PS button menu audio adjustments continue
+  valid instantly (from 0.40).
+  The level is valid for the next 8 openings of the game; if the game works
+  right on it (10 minutes or so), keep going. If you also fail level 3,
+  the warning asks for the logs: send the startup.log and the RPCS3.log. Close by
+  PS button does not count as failure.
+- To choose from hand: Square about the game > "Safe mode of this
+  game"; X changes between Off, Level 1, Level 2 and Level 3 (valid in
+  next boot of the game). The line "Automatic adjustment after failure" shows
+  "Safe mode: level N (<reason>)"; X on it removes what was noted
+  for the game. If you close a game right after opening it (the menus
+  work, but the game doesn't load), the next opening of RPCS3
+  remember: "RPCS3: <game> didn't work? In the games list: Square no
+  game > Safe mode for this game".
+- "This game's ISO is incomplete...: copy it again.": the ISO was
+  copied in half. Copy again; reopening RPCS3 does not solve the problem.
+- Sound that disappeared after pressing the PS button and back (close to the limit
+  of threads: PES 2013, inFamous, Splinter Cell, God of War): fixed
+  at 0.40. The sound output stops during the pause instead of being
+  closed and opened again. If the sound still disappears, send the logs.
+- Game movie stopped or black screen in the movie (God of War Collection,
+Demon's Souls, E.X. Troopers): thread vacancies were almost always missing
+  on PS4 (the limit is around 80). 0.40 returns more slots and when the PS4
+  refuse a movie or music decoder, wait for a space and try
+  again once. If the movie still stops, send the logs.
+- "No thread vacancies for savestate now: savestate has been
+  canceled and the game continues": there was no free thread for savestate
+  (before the emulator closed). Keep playing and try again later, or
+  save in the game itself. "No thread vacancies for savestate: the game
+  was closed without saving state": the same when closing with savestate.
+- "Video memory exhausted in OpenGL: use Vulkan": in OpenGL a
+  video memory ran out and the game was closed (before it crashed with a
+  format error). Use the Vulkan Renderer in this game.
+- Graphics that disappear while a new scene loads: while a shader
+  compiles the emulator skips the drawing, and until 0.39 the game thought that the
+  object was hidden (probable cause of Sonic 06 without the level and without the
+  Sonic, and the invisible players in PES 2013). From 0.40 um
+  Skipped drawing never counts as hidden. If there is still something missing
+  thing, send the logs.
+- Game that lost the GPU ("device lost", GTA IV, Splinter Cell): us
+  next 8 boots of this game the emulator sends the GPU commands in
+  smaller parts.
+- Who tests new versions: the file TEST_ON_PS4.txt explains each
+  file that turns on or off a new feature (NEWS FROM 0.40) and what
+  send from each test.
+- If XMB shows the window "An error has occurred in the emulator." or "The
+  Emulator needs to restart after previous error." ("To play
+  new, close the application using the PS button and open it again."), close
+  by the PS button > Close application and open it again. After an error
+  in the emulator, no game opens until you reopen the application (which the thread
+  with an error, it won't come back); XMB continues to work for the
+  rest. The game you chose opens by itself when the application is
+  opened again. If it closes again with the same error, XMB says
+  "it closed again with the same error: reopening RPCS3 doesn't solve it":
+  choose another game and send the logs.
+- "RPCS3: Video memory exhausted. The game will close and you return
+  to the menu.": the game closes by itself and returns to XMB (instead of crashing),
+  with the window "Video memory has been exhausted and the game has been closed.".
+  You can open the game again; the next time the emulator saves less
+  things in video memory in that game.
+- "RPCS3: emulator memory low. Save the game; ...": the emulator
+  It is low on memory and compiles slower until it comes back. Save
+  when you can. If you see "Emulator memory almost exhausted: save the game
+  now and restart the application later", save immediately and, before the next
+  game, close the PS button > Close application and open it again.
+- "RPCS3: JIT memory exhausted, part of the SPU code runs in
+  interpreted (slow). Save the game and restart the application.": the game
+  continues, slower. Save, close by PS button > Close application
+  and open again.
+- FPS counter in the installation windows: it is not from the emulator, it is from the
+  GoldHEN. To take it, turn off the FPS option in the GoldHEN menu.
+- Games that don't work on RPCS3 on PC also don't work here.

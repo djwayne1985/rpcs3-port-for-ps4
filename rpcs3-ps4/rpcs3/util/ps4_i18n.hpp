@@ -95,8 +95,8 @@ inline constexpr const char* names[] = {
 static_assert(sizeof(names) / sizeof(names[0]) == id_count, "one name per id");
 #endif
 
-inline std::atomic<std::uint8_t> g_lang{0};    // lang; pt_br until apply()
-inline std::atomic<std::uint8_t> g_setting{0}; // setting
+inline std::atomic<std::uint8_t> g_lang{1};    // lang; English until apply()
+inline std::atomic<std::uint8_t> g_setting{2}; // setting; English by default
 inline std::atomic<std::int32_t> g_system{-1}; // ORBIS_SYSTEM_PARAM_LANG_*, -1 unknown
 
 // Column that serves 'l' in 'r': the requested one when filled, else English, else pt-BR

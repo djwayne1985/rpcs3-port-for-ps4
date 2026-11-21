@@ -1,12 +1,12 @@
 #pragma once
 
 // Packaging verifies this marker against -Version before producing a PKG.
-inline constexpr char ps4_build_version[] = "0.40";
+inline constexpr char ps4_build_version[] = "0.41";
 
 // Release date of this build (YYYY-MM-DD). A console clock earlier than this date (minus one day) cannot be right, so
 // offline checks report a wrong clock instead of a network failure. It must never be later than the day the package
 // is built: a later date would call a correct clock wrong.
-inline constexpr char ps4_build_date[] = "2026-10-23";
+inline constexpr char ps4_build_date[] = "2026-11-21";
 
 namespace ps4_build_detail
 {

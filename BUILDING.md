@@ -1,4 +1,4 @@
-# Building RPCS3 PORT FOR PS4 0.40
+# Building RPCS3 PORT FOR PS4 0.41
 
 The build runs on a **Windows x64** host. It cross-compiles RPCS3 and its libraries for the PS4 with
 the OpenOrbis PS4 Toolchain and llvm-mingw's Clang/LLD, links the native ELF, and turns it into a
@@ -136,7 +136,7 @@ ELF (`verify-native-dispatch.py` and the process exit policy, with `llvm-nm`/`ll
 the build stamp (`ps4-port/tools/stamp_build.py`), runs `create-fself`, stages the package
 (`sce_sys/about/right.sprx`, `sce_module/libc.prx` and `sce_module/libSceFios2.prx` from the SDK's
 `samples/hello_world`, `ps4-port/assets/icon0.png`, the DejaVu fonts and the overlay icons from
-`bin/`, `LICENSE`, `licenses/LLVM.txt`, `certs/cacert.pem`, `TUTORIAL.txt`, `TESTAR_NO_PS4.txt`),
+`bin/`, `LICENSE`, `licenses/LLVM.txt`, `certs/cacert.pem`, `TUTORIAL.txt`, `TEST_ON_PS4.txt`),
 builds the PKG with `create-gp4` and `PkgTool.Core`, validates it, extracts it again and compares the
 hash of every file.
 

@@ -3,7 +3,7 @@ param(
     [string]$Sdk = [IO.Path]::GetFullPath("$PSScriptRoot/../../RoberixUSB/tools/OpenOrbis/PS4Toolchain").Replace('\', '/'),
     [string]$Build = "$PSScriptRoot/.build-abi",
     [ValidatePattern('^[0-9]{1,2}\.[0-9]{2}$')]
-    [string]$Version = '0.40',
+    [string]$Version = '0.41',
     [string]$Python = 'python',
     # llvm-nm/llvm-objdump used by the exit-policy validation (0.25 and later).
     [string]$LlvmTools = [IO.Path]::GetFullPath("$PSScriptRoot/../../ps4-usb-pad/tools/llvm-mingw-20240619-ucrt-x86_64/bin").Replace('\', '/'),
@@ -447,7 +447,7 @@ $manifestJson = $manifest | ConvertTo-Json -Depth 8
 # The manifest ships inside the package: no field may carry a build-machine path.
 if ($manifestJson -match '(?i)(^|[^a-z0-9])[a-z]:(\\\\|/)') { throw 'build-manifest.json would contain an absolute host path' }
 $manifestJson | Set-Content -LiteralPath "$stage/build-manifest.json" -Encoding utf8
-Copy-Item -LiteralPath "$PSScriptRoot/TESTAR_NO_PS4.txt" -Destination "$stage/TESTAR_NO_PS4.txt"
+Copy-Item -LiteralPath "$PSScriptRoot/TEST_ON_PS4.txt" -Destination "$stage/TEST_ON_PS4.txt"
 Copy-Item -LiteralPath "$PSScriptRoot/TUTORIAL.txt" -Destination "$stage/TUTORIAL.txt"
 Push-Location $stage
 try {
@@ -462,7 +462,7 @@ try {
         Invoke-Checked "$tools/PkgTool.Core.exe" @('sfo_setentry','sce_sys/param.sfo',$entry[0],
             '--type',$entry[1],'--maxsize',$entry[2],'--value',$entry[3])
     }
-    $files = 'eboot.bin sce_sys/about/right.sprx sce_sys/param.sfo sce_sys/icon0.png sce_module/libc.prx sce_module/libSceFios2.prx fonts/DejaVuSans.ttf fonts/DejaVuSansMono.ttf LICENSE THIRD_PARTY_NOTICES.md build-manifest.json TESTAR_NO_PS4.txt TUTORIAL.txt'
+    $files = 'eboot.bin sce_sys/about/right.sprx sce_sys/param.sfo sce_sys/icon0.png sce_module/libc.prx sce_module/libSceFios2.prx fonts/DejaVuSans.ttf fonts/DejaVuSansMono.ttf LICENSE THIRD_PARTY_NOTICES.md build-manifest.json TEST_ON_PS4.txt TUTORIAL.txt'
     $files += ' ' + (($uiResources + $licenseResources + $databaseResources) -join ' ')
     Invoke-Checked "$tools/create-gp4.exe" @('-out','native.gp4',"--content-id=$contentId",'--files',$files)
     # The SDK template lists only its sample directories. Add our font root
@@ -517,7 +517,7 @@ if ($LASTEXITCODE) { throw 'Cannot inspect embedded SFO' }
 foreach ($entry in ($stagedSfo | Select-Object -Skip 1)) {
     if ($embeddedSfo -notcontains $entry) { throw "Package SFO entry differs: $entry" }
 }
-foreach ($resource in (@('sce_sys/icon0.png', 'fonts/DejaVuSans.ttf', 'fonts/DejaVuSansMono.ttf', 'build-manifest.json', 'LICENSE', 'THIRD_PARTY_NOTICES.md', 'TESTAR_NO_PS4.txt', 'TUTORIAL.txt') + $uiResources + $licenseResources + $databaseResources)) {
+foreach ($resource in (@('sce_sys/icon0.png', 'fonts/DejaVuSans.ttf', 'fonts/DejaVuSansMono.ttf', 'build-manifest.json', 'LICENSE', 'THIRD_PARTY_NOTICES.md', 'TEST_ON_PS4.txt', 'TUTORIAL.txt') + $uiResources + $licenseResources + $databaseResources)) {
     $resourceRoot = if ($resource.StartsWith('sce_sys/')) { $verification } else { $embeddedRoot }
     if ((Get-FileHash "$resourceRoot/$resource" -Algorithm SHA256).Hash -ne
         (Get-FileHash "$stage/$resource" -Algorithm SHA256).Hash) {
@@ -527,7 +527,7 @@ foreach ($resource in (@('sce_sys/icon0.png', 'fonts/DejaVuSans.ttf', 'fonts/Dej
 $final = Join-Path $output "RPCS3_PS4_NATIVE_${Version}_$stamp.pkg"
 Copy-Item -LiteralPath $built -Destination $final
 Copy-Item -LiteralPath "$stage/build-manifest.json" -Destination "$output/build-manifest-$stamp.json"
-Copy-Item -LiteralPath "$PSScriptRoot/TESTAR_NO_PS4.txt" -Destination "$output/TESTAR_NO_PS4.txt"
+Copy-Item -LiteralPath "$PSScriptRoot/TEST_ON_PS4.txt" -Destination "$output/TEST_ON_PS4.txt"
 Copy-Item -LiteralPath "$PSScriptRoot/TUTORIAL.txt" -Destination "$output/TUTORIAL.txt"
 $digest = (Get-FileHash $final -Algorithm SHA256).Hash
 "$digest  $([IO.Path]::GetFileName($final))" | Set-Content -LiteralPath "$final.sha256" -Encoding ascii
