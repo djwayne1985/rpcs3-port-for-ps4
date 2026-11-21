@@ -8,7 +8,7 @@ PlayStation 4 consoles running the GoldHEN homebrew enabler.
 
 ## Download
 
-[Download the 0.41 pre-release and PS4 PKG](https://github.com/djwayne1985/rpcs3-port-for-ps4/releases/tag/v0.41).
+[Download the 0.41 pre-release and PS4 PKG](https://github.com/djwayne1985/rpcs3-port-for-ps4/releases/tag/v0.41-fladnag).
 This experimental build has not been tested on a PS4.
 
 The emulation core is the original RPCS3 code (upstream commit

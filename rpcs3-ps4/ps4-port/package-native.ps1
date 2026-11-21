@@ -417,7 +417,7 @@ $uiResources = @(Get-ChildItem -LiteralPath "$repo/bin/Icons/ui" -File -Recurse 
 if (!$uiResources.Count) { throw 'The native overlay icons are missing' }
 
 # Name shown on the PS4 home screen (param.sfo TITLE, max 127 bytes).
-$appTitle = 'RPCS3 PORT FOR PS4 by roberix studio & mifi studios'
+$appTitle = 'RPCS3 PORT FOR PS4 by Fladnag'
 $stamp = Get-Date -Format 'yyyyMMdd_HHmmss'
 $gitHead = & git -c safe.directory=* -C $repo rev-parse HEAD
 if ($LASTEXITCODE -or !$gitHead) { throw "git rev-parse HEAD failed ($LASTEXITCODE)" }
