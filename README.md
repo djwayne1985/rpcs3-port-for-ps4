@@ -6,6 +6,11 @@ PlayStation 4 consoles running the GoldHEN homebrew enabler.
 > **Unofficial project.** It is not affiliated with Sony Interactive Entertainment or the RPCS3 team.
 > Please do not ask the RPCS3 team for support with this port.
 
+## Download
+
+[Download the 0.41 pre-release and PS4 PKG](https://github.com/djwayne1985/rpcs3-port-for-ps4/releases/tag/v0.41).
+This experimental build has not been tested on a PS4.
+
 The emulation core is the original RPCS3 code (upstream commit
 `9d52b338058bda2d5a9d7cd5e4fbc8148e55a385`), cross-compiled for the PS4 with the OpenOrbis PS4
 Toolchain. The port adds the console frontend, native adapters for memory, video, audio, controllers,
@@ -95,7 +100,7 @@ and can take many minutes; later starts use the cache.
 
 ## Download and reporting problems
 
-- The PKG of each version is on the [Releases](https://github.com/RoberixStudios/rpcs3-port-for-ps4/releases)
+- The PKG of each version is on the [Releases](https://github.com/djwayne1985/rpcs3-port-for-ps4/releases)
   page, with its SHA-256.
 - To report a problem, open an [issue](https://github.com/RoberixStudios/rpcs3-port-for-ps4/issues) and attach
   `/data/rpcs3/startup.log`, `/data/rpcs3/log/RPCS3.log` and `/data/rpcs3/log/mesa.log` (copy them with
